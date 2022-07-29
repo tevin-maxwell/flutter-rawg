@@ -21,6 +21,20 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+
+def keystorePropertiesProd = new Properties()
+def keystorePropertiesFileProd = rootProject.file('prod-key.properties')
+if (keystorePropertiesFileProd.exists()) {
+    keystorePropertiesProd.load(new FileInputStream(keystorePropertiesFileProd))
+}
+
+def keystorePropertiesOther = new Properties()
+def keystorePropertiesFileOther = rootProject.file('other-key.properties')
+if (keystorePropertiesFileOther.exists()) {
+    keystorePropertiesOther.load(new FileInputStream(keystorePropertiesFileOther))
+}
+
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -53,11 +67,46 @@ android {
         versionName flutterVersionName
     }
 
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+
+    signingConfigs {
+       releaseProd {
+           keyAlias keystorePropertiesProd['keyAlias']
+           keyPassword keystorePropertiesProd['keyPassword']
+           storeFile keystorePropertiesProd['storeFile'] ? file(keystorePropertiesProd['storeFile']) : null
+           storePassword keystorePropertiesProd['storePassword']
+       }
+       releaseOther {
+           keyAlias keystorePropertiesOther['keyAlias']
+           keyPassword keystorePropertiesOther['keyPassword']
+           storeFile keystorePropertiesOther['storeFile'] ? file(keystorePropertiesOther['storeFile']) : null
+           storePassword keystorePropertiesOther['storePassword']
+       }
+    }
+
+    // buildTypes {
+    //     release {
+    //         // TODO: Add your own signing config for the release build.
+    //         // Signing with the debug keys for now, so `flutter run --release` works.
+    //         signingConfig signingConfigs.debug
+    //     }
+    // }
+
+    flavorDimensions "app"
+
+    productFlavors { 
+        dev {
+            dimension "app"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "Dev Rawg IO"
+            versionNameSuffix "-dev"
+            signingConfig signingConfigs.releaseOther
+            // manifestPlaceholders = [appName: "Propertyss Agent"]
+        }
+        prod {
+            dimension "app"
+            resValue "string", "app_name", "Rawg IO"
+            signingConfig signingConfigs.releaseProd
+            // manifestPlaceholders = [appName: "Propertyss Agent"]
         }
     }
 }
