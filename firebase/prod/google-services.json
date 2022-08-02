@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "998694748532",
+    "firebase_url": "https://zakuska-snack.firebaseio.com",
+    "project_id": "zakuska-snack",
+    "storage_bucket": "zakuska-snack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998694748532:android:52a958a3d0dca48b1bac21",
+        "android_client_info": {
+          "package_name": "kh.com.pada.rawg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998694748532-182bnakggvmucb22ffp5lvu5n3cojabv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQrLWQfzJg8QyBO5piI7uxH-eo7lFDyws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998694748532-182bnakggvmucb22ffp5lvu5n3cojabv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "998694748532-e5pmqkfdqgeh01fqua7sum9hgvg1ci0d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kh.com.pada.rawg"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998694748532:android:605faad248e2c9ab1bac21",
+        "android_client_info": {
+          "package_name": "kh.com.pada.rawg.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998694748532-182bnakggvmucb22ffp5lvu5n3cojabv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQrLWQfzJg8QyBO5piI7uxH-eo7lFDyws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998694748532-182bnakggvmucb22ffp5lvu5n3cojabv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "998694748532-e5pmqkfdqgeh01fqua7sum9hgvg1ci0d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kh.com.pada.rawg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
