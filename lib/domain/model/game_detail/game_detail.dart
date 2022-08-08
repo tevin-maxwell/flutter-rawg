@@ -14,7 +14,7 @@ class GameDetail with _$GameDetail {
     @Default('') String slug,
     @Default('') @JsonKey(name: 'name_original') String nameOriginal,
     @Default('') String description,
-    @Default(0) int metacritic,
+    @Default(0) double metacritic,
     // @Default()
     @Default('') String released,
     @Default(false) bool tba,
@@ -24,7 +24,7 @@ class GameDetail with _$GameDetail {
     @JsonKey(name: 'background_image_additional')
         String backgroundImageAdditional,
     @Default('') String website,
-    @Default(0) int rating,
+    @Default(0) double rating,
     @Default(0) @JsonKey(name: 'rating_top') int ratingTop,
     @Default([]) List<Rating> ratings,
   }) = _GameDetail;

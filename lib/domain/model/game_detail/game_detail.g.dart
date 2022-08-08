@@ -13,7 +13,7 @@ _$_GameDetail _$$_GameDetailFromJson(Map<String, dynamic> json) =>
       slug: json['slug'] as String? ?? '',
       nameOriginal: json['name_original'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      metacritic: json['metacritic'] as int? ?? 0,
+      metacritic: (json['metacritic'] as num?)?.toDouble() ?? 0,
       released: json['released'] as String? ?? '',
       tba: json['tba'] as bool? ?? false,
       updated: json['updated'] == null
@@ -23,7 +23,7 @@ _$_GameDetail _$$_GameDetailFromJson(Map<String, dynamic> json) =>
       backgroundImageAdditional:
           json['background_image_additional'] as String? ?? '',
       website: json['website'] as String? ?? '',
-      rating: json['rating'] as int? ?? 0,
+      rating: (json['rating'] as num?)?.toDouble() ?? 0,
       ratingTop: json['rating_top'] as int? ?? 0,
       ratings: (json['ratings'] as List<dynamic>?)
               ?.map((e) => Rating.fromJson(e as Map<String, dynamic>))

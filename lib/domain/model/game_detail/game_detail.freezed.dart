@@ -26,7 +26,7 @@ mixin _$GameDetail {
   @JsonKey(name: 'name_original')
   String get nameOriginal => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  int get metacritic => throw _privateConstructorUsedError; // @Default()
+  double get metacritic => throw _privateConstructorUsedError; // @Default()
   String get released => throw _privateConstructorUsedError;
   bool get tba => throw _privateConstructorUsedError;
   DateTime? get updated => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ mixin _$GameDetail {
   @JsonKey(name: 'background_image_additional')
   String get backgroundImageAdditional => throw _privateConstructorUsedError;
   String get website => throw _privateConstructorUsedError;
-  int get rating => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating_top')
   int get ratingTop => throw _privateConstructorUsedError;
   List<Rating> get ratings => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $GameDetailCopyWith<$Res> {
       @JsonKey(name: 'name_original')
           String nameOriginal,
       String description,
-      int metacritic,
+      double metacritic,
       String released,
       bool tba,
       DateTime? updated,
@@ -67,7 +67,7 @@ abstract class $GameDetailCopyWith<$Res> {
       @JsonKey(name: 'background_image_additional')
           String backgroundImageAdditional,
       String website,
-      int rating,
+      double rating,
       @JsonKey(name: 'rating_top')
           int ratingTop,
       List<Rating> ratings});
@@ -123,7 +123,7 @@ class _$GameDetailCopyWithImpl<$Res> implements $GameDetailCopyWith<$Res> {
       metacritic: metacritic == freezed
           ? _value.metacritic
           : metacritic // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       released: released == freezed
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
@@ -151,7 +151,7 @@ class _$GameDetailCopyWithImpl<$Res> implements $GameDetailCopyWith<$Res> {
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       ratingTop: ratingTop == freezed
           ? _value.ratingTop
           : ratingTop // ignore: cast_nullable_to_non_nullable
@@ -178,7 +178,7 @@ abstract class _$$_GameDetailCopyWith<$Res>
       @JsonKey(name: 'name_original')
           String nameOriginal,
       String description,
-      int metacritic,
+      double metacritic,
       String released,
       bool tba,
       DateTime? updated,
@@ -187,7 +187,7 @@ abstract class _$$_GameDetailCopyWith<$Res>
       @JsonKey(name: 'background_image_additional')
           String backgroundImageAdditional,
       String website,
-      int rating,
+      double rating,
       @JsonKey(name: 'rating_top')
           int ratingTop,
       List<Rating> ratings});
@@ -245,7 +245,7 @@ class __$$_GameDetailCopyWithImpl<$Res> extends _$GameDetailCopyWithImpl<$Res>
       metacritic: metacritic == freezed
           ? _value.metacritic
           : metacritic // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       released: released == freezed
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
@@ -273,7 +273,7 @@ class __$$_GameDetailCopyWithImpl<$Res> extends _$GameDetailCopyWithImpl<$Res>
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       ratingTop: ratingTop == freezed
           ? _value.ratingTop
           : ratingTop // ignore: cast_nullable_to_non_nullable
@@ -330,7 +330,7 @@ class _$_GameDetail implements _GameDetail {
   final String description;
   @override
   @JsonKey()
-  final int metacritic;
+  final double metacritic;
 // @Default()
   @override
   @JsonKey()
@@ -351,7 +351,7 @@ class _$_GameDetail implements _GameDetail {
   final String website;
   @override
   @JsonKey()
-  final int rating;
+  final double rating;
   @override
   @JsonKey(name: 'rating_top')
   final int ratingTop;
@@ -436,7 +436,7 @@ abstract class _GameDetail implements GameDetail {
       @JsonKey(name: 'name_original')
           final String nameOriginal,
       final String description,
-      final int metacritic,
+      final double metacritic,
       final String released,
       final bool tba,
       final DateTime? updated,
@@ -445,7 +445,7 @@ abstract class _GameDetail implements GameDetail {
       @JsonKey(name: 'background_image_additional')
           final String backgroundImageAdditional,
       final String website,
-      final int rating,
+      final double rating,
       @JsonKey(name: 'rating_top')
           final int ratingTop,
       final List<Rating> ratings}) = _$_GameDetail;
@@ -465,7 +465,7 @@ abstract class _GameDetail implements GameDetail {
   @override
   String get description;
   @override
-  int get metacritic;
+  double get metacritic;
   @override // @Default()
   String get released;
   @override
@@ -481,7 +481,7 @@ abstract class _GameDetail implements GameDetail {
   @override
   String get website;
   @override
-  int get rating;
+  double get rating;
   @override
   @JsonKey(name: 'rating_top')
   int get ratingTop;
