@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'list_of_game_request.dart';
+part of 'list_of_games_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ListOfGameRequest _$$_ListOfGameRequestFromJson(Map<String, dynamic> json) =>
-    _$_ListOfGameRequest(
+_$_ListOfGamesRequest _$$_ListOfGamesRequestFromJson(
+        Map<String, dynamic> json) =>
+    _$_ListOfGamesRequest(
       page: json['page'] as int,
       pageSize: json['page_size'] as int,
       key: json['key'] as String,
@@ -25,8 +26,8 @@ _$_ListOfGameRequest _$$_ListOfGameRequestFromJson(Map<String, dynamic> json) =>
       orderBy: json['ordering'] as String?,
     );
 
-Map<String, dynamic> _$$_ListOfGameRequestToJson(
-        _$_ListOfGameRequest instance) =>
+Map<String, dynamic> _$$_ListOfGamesRequestToJson(
+        _$_ListOfGamesRequest instance) =>
     <String, dynamic>{
       'page': instance.page,
       'page_size': instance.pageSize,

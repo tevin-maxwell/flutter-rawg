@@ -20,9 +20,13 @@ BaseListingRequest _$BaseListingRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BaseListingRequest {
-  int get page => throw _privateConstructorUsedError;
-  int get pageSize => throw _privateConstructorUsedError;
   String get key => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
+  @JsonKey(name: 'page_size')
+  int get pageSize => throw _privateConstructorUsedError;
+  String get search => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ordering')
+  String? get orderBy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +39,12 @@ abstract class $BaseListingRequestCopyWith<$Res> {
   factory $BaseListingRequestCopyWith(
           BaseListingRequest value, $Res Function(BaseListingRequest) then) =
       _$BaseListingRequestCopyWithImpl<$Res>;
-  $Res call({int page, int pageSize, String key});
+  $Res call(
+      {String key,
+      int page,
+      @JsonKey(name: 'page_size') int pageSize,
+      String search,
+      @JsonKey(name: 'ordering') String? orderBy});
 }
 
 /// @nodoc
@@ -49,11 +58,17 @@ class _$BaseListingRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? key = freezed,
     Object? page = freezed,
     Object? pageSize = freezed,
-    Object? key = freezed,
+    Object? search = freezed,
+    Object? orderBy = freezed,
   }) {
     return _then(_value.copyWith(
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -62,10 +77,14 @@ class _$BaseListingRequestCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
+      search: search == freezed
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
               as String,
+      orderBy: orderBy == freezed
+          ? _value.orderBy
+          : orderBy // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -77,7 +96,12 @@ abstract class _$$_BaseListingRequestCopyWith<$Res>
           $Res Function(_$_BaseListingRequest) then) =
       __$$_BaseListingRequestCopyWithImpl<$Res>;
   @override
-  $Res call({int page, int pageSize, String key});
+  $Res call(
+      {String key,
+      int page,
+      @JsonKey(name: 'page_size') int pageSize,
+      String search,
+      @JsonKey(name: 'ordering') String? orderBy});
 }
 
 /// @nodoc
@@ -93,11 +117,17 @@ class __$$_BaseListingRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? key = freezed,
     Object? page = freezed,
     Object? pageSize = freezed,
-    Object? key = freezed,
+    Object? search = freezed,
+    Object? orderBy = freezed,
   }) {
     return _then(_$_BaseListingRequest(
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -106,10 +136,14 @@ class __$$_BaseListingRequestCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
+      search: search == freezed
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
               as String,
+      orderBy: orderBy == freezed
+          ? _value.orderBy
+          : orderBy // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -117,23 +151,34 @@ class __$$_BaseListingRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BaseListingRequest implements _BaseListingRequest {
-  _$_BaseListingRequest({this.page = 1, this.pageSize = 10, required this.key});
+  _$_BaseListingRequest(
+      {required this.key,
+      this.page = 1,
+      @JsonKey(name: 'page_size') this.pageSize = 10,
+      this.search = '',
+      @JsonKey(name: 'ordering') this.orderBy});
 
   factory _$_BaseListingRequest.fromJson(Map<String, dynamic> json) =>
       _$$_BaseListingRequestFromJson(json);
 
   @override
+  final String key;
+  @override
   @JsonKey()
   final int page;
   @override
-  @JsonKey()
+  @JsonKey(name: 'page_size')
   final int pageSize;
   @override
-  final String key;
+  @JsonKey()
+  final String search;
+  @override
+  @JsonKey(name: 'ordering')
+  final String? orderBy;
 
   @override
   String toString() {
-    return 'BaseListingRequest(page: $page, pageSize: $pageSize, key: $key)';
+    return 'BaseListingRequest(key: $key, page: $page, pageSize: $pageSize, search: $search, orderBy: $orderBy)';
   }
 
   @override
@@ -141,18 +186,22 @@ class _$_BaseListingRequest implements _BaseListingRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BaseListingRequest &&
+            const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.pageSize, pageSize) &&
-            const DeepCollectionEquality().equals(other.key, key));
+            const DeepCollectionEquality().equals(other.search, search) &&
+            const DeepCollectionEquality().equals(other.orderBy, orderBy));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(key),
       const DeepCollectionEquality().hash(page),
       const DeepCollectionEquality().hash(pageSize),
-      const DeepCollectionEquality().hash(key));
+      const DeepCollectionEquality().hash(search),
+      const DeepCollectionEquality().hash(orderBy));
 
   @JsonKey(ignore: true)
   @override
@@ -170,19 +219,28 @@ class _$_BaseListingRequest implements _BaseListingRequest {
 
 abstract class _BaseListingRequest implements BaseListingRequest {
   factory _BaseListingRequest(
-      {final int page,
-      final int pageSize,
-      required final String key}) = _$_BaseListingRequest;
+          {required final String key,
+          final int page,
+          @JsonKey(name: 'page_size') final int pageSize,
+          final String search,
+          @JsonKey(name: 'ordering') final String? orderBy}) =
+      _$_BaseListingRequest;
 
   factory _BaseListingRequest.fromJson(Map<String, dynamic> json) =
       _$_BaseListingRequest.fromJson;
 
   @override
+  String get key;
+  @override
   int get page;
   @override
+  @JsonKey(name: 'page_size')
   int get pageSize;
   @override
-  String get key;
+  String get search;
+  @override
+  @JsonKey(name: 'ordering')
+  String? get orderBy;
   @override
   @JsonKey(ignore: true)
   _$$_BaseListingRequestCopyWith<_$_BaseListingRequest> get copyWith =>

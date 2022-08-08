@@ -1,11 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_rawg/data/api/request/base_listing_request/base_listing_request.dart';
-import 'package:flutter_rawg/data/api/request/list_of_games_request/list_of_game_request.dart';
-import 'package:flutter_rawg/data/api/response/list_of_game_creators_response/list_of_game_creators_response.dart';
-import 'package:flutter_rawg/data/api/response/list_of_game_developers_response/list_of_game_developers_response.dart';
-import 'package:flutter_rawg/data/api/response/list_of_game_screenshots_response/list_of_game_screenshots_response.dart';
-import 'package:flutter_rawg/data/api/response/list_of_games_response/list_of_games_response.dart';
-import 'package:flutter_rawg/domain/model/game_detail/game_detail.dart';
+import 'package:flutter_rawg/data/api/request/request.dart';
+import 'package:flutter_rawg/data/api/response/response.dart';
 import 'package:flutter_rawg/domain/model/model.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -33,24 +28,58 @@ abstract class APIClientType {
 
   @GET('/games')
   Future<ListOfGamesResponse> getListOfGames(
-      @Queries() ListOfGameRequest listOfGameRequest);
+      @Queries() ListOfGamesRequest listOfGamesRequest);
 
   @GET('/games/{id}')
   Future<GameDetail> getGameDetail(
       @Path('id') int id, @Query('key') String key);
 
   @GET('/games/{id}/achievements')
-  Future<void> getListOfGameAchievements(
-      @Path('id') int id, @Query('key') String key);
+  Future<ListOfGameAchievementsResponse> getListOfGameAchievements(
+      @Path('id') int id, @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/games/{id}/movies')
-  Future<void> getListOfGameTrailers(
-      @Path('id') int id, @Query('key') String key);
+  Future<ListOfGameTrailersResponse> getListOfGameTrailers(
+      @Path('id') int id, @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/games/{id}/screenshots')
   Future<ListOfGameScreenshotsResponse> getListOfGameScreenshots(
-      @Path('id') int id,
-      @Query('page') int page,
-      @Query('page_size') int pageSize,
-      @Query('key') String key);
+      @Path('id') int id, @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/games/{id}/stores')
+  Future<ListOfStoreLinksByGameResponse> getListOfStoreLinksByGame(
+      @Path('id') int id, @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/genres')
+  Future<ListOfGameGenresResponse> getListOfGameGenres(
+      @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/genres/{id}')
+  Future<Genre> getGenreDetail(@Path('id') int id, @Query('key') String key);
+
+  @GET('/tags')
+  Future<ListOfGameTagsResponse> getListOfGameTags(
+      @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/tags/{id}')
+  Future<Tag> getTagDetail(@Path('id') int id, @Query('key') String key);
+
+  @GET('/platforms')
+  Future<ListOfGamePlatformsResponse> getListOfGamePlatforms(
+      @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/platforms/{id}')
+  Future<Platform> getPlatformDetail(
+      @Path('id') int id, @Query('key') String key);
+
+  @GET('/platforms/list/parents')
+  Future<ListOfGameParentPlatformsResponse> getListOfParentPlatforms(
+      @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/stores')
+  Future<ListOfGameStoresResponse> getListOfGameStores(
+      @Queries() BaseListingRequest baseListingRequest);
+
+  @GET('/stores/{id}')
+  Future<Store> getStoreDetail(@Path('id') int id, @Query('key') String key);
 }

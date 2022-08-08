@@ -1,9 +1,8 @@
 import 'package:flutter_rawg/data/api/api_client/api_client_type.dart';
-import 'package:flutter_rawg/data/api/response/list_of_game_creators_response/list_of_game_creators_response.dart';
-import 'package:flutter_rawg/data/api/request/base_listing_request/base_listing_request.dart';
-import 'package:flutter_rawg/data/api/request/base_detail_request/base_detail_request.dart';
-import 'package:flutter_rawg/data/datasource/creator/creator_datasource_type.dart';
-import 'package:flutter_rawg/domain/model/creator_detail/creator_detail.dart';
+import 'package:flutter_rawg/data/api/response/response.dart';
+import 'package:flutter_rawg/data/api/request/request.dart';
+import 'package:flutter_rawg/data/datasource/datasource.dart';
+import 'package:flutter_rawg/domain/model/model.dart';
 
 class CreatorDataSource implements CreatorDataSourceType {
   CreatorDataSource({required this.apiClient});

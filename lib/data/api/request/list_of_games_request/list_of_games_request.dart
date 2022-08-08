@@ -2,12 +2,12 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'list_of_game_request.freezed.dart';
-part 'list_of_game_request.g.dart';
+part 'list_of_games_request.freezed.dart';
+part 'list_of_games_request.g.dart';
 
 @freezed
-class ListOfGameRequest with _$ListOfGameRequest {
-  factory ListOfGameRequest({
+class ListOfGamesRequest with _$ListOfGamesRequest {
+  factory ListOfGamesRequest({
     required int page,
     @JsonKey(name: 'page_size') required int pageSize,
     required String key,
@@ -27,8 +27,8 @@ class ListOfGameRequest with _$ListOfGameRequest {
     /// You can also reverse the sort order by add a [hyphen] before [value]
     /// Example: -[name]
     @JsonKey(name: 'ordering') String? orderBy,
-  }) = _ListOfGameRequest;
+  }) = _ListOfGamesRequest;
 
-  factory ListOfGameRequest.fromJson(Map<String, dynamic> json) =>
-      _$ListOfGameRequestFromJson(json);
+  factory ListOfGamesRequest.fromJson(Map<String, dynamic> json) =>
+      _$ListOfGamesRequestFromJson(json);
 }

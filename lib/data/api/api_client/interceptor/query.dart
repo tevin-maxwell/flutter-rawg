@@ -1,5 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_rawg/data/api/error.dart';
 
 class QueryInterceptor extends InterceptorsWrapper {
   static const _contentType = 'content-type';
@@ -41,13 +42,13 @@ class QueryInterceptor extends InterceptorsWrapper {
     final isInValidAuthenticationResponse =
         await _isInValidAuthenticationResponse(response);
     if (isInValidAuthenticationResponse) {
-      throw DioError(
+      DioError dioError = DioError(
         requestOptions: response.requestOptions,
         response: response,
         type: DioErrorType.response,
-        error:
-            'Invalid token or current token is expired. Please try logging in again!',
+        error: 'Invalid token. Please try logging in again!',
       );
+      throw NoAuthentication(dioError: dioError);
     }
     if (!isResponseOkButNoContent(response) && expectResponseJson) {
       throw DioError(

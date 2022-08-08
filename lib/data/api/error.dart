@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'error.freezed.dart';
@@ -17,5 +18,6 @@ abstract class Failure with _$Failure {
       NoConnection;
 
   const factory Failure.noAuthentication(
-      {@Default('Please sign in first!') String message}) = NoAuthentication;
+      {@Default('Please sign in first!') String message,
+      required DioError dioError}) = NoAuthentication;
 }

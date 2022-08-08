@@ -84,10 +84,10 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<ListOfGamesResponse> getListOfGames(listOfGameRequest) async {
+  Future<ListOfGamesResponse> getListOfGames(listOfGamesRequest) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(listOfGameRequest.toJson());
+    queryParameters.addAll(listOfGamesRequest.toJson());
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -117,42 +117,47 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<void> getListOfGameAchievements(id, key) async {
+  Future<ListOfGameAchievementsResponse> getListOfGameAchievements(
+      id, baseListingRequest) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    await _dio.fetch<void>(_setStreamType<void>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/games/${id}/achievements',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    return null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameAchievementsResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/games/${id}/achievements',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameAchievementsResponse.fromJson(_result.data!);
+    return value;
   }
 
   @override
-  Future<void> getListOfGameTrailers(id, key) async {
+  Future<ListOfGameTrailersResponse> getListOfGameTrailers(
+      id, baseListingRequest) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    await _dio.fetch<void>(_setStreamType<void>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/games/${id}/movies',
-                queryParameters: queryParameters, data: _data)
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    return null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameTrailersResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/games/${id}/movies',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameTrailersResponse.fromJson(_result.data!);
+    return value;
   }
 
   @override
   Future<ListOfGameScreenshotsResponse> getListOfGameScreenshots(
-      id, page, pageSize, key) async {
+      id, baseListingRequest) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'page': page,
-      r'page_size': pageSize,
-      r'key': key
-    };
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -162,6 +167,176 @@ class _APIClientType implements APIClientType {
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ListOfGameScreenshotsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfStoreLinksByGameResponse> getListOfStoreLinksByGame(
+      id, baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfStoreLinksByGameResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/games/${id}/stores',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfStoreLinksByGameResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfGameGenresResponse> getListOfGameGenres(
+      baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameGenresResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/genres',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameGenresResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<Genre> getGenreDetail(id, key) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'key': key};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Genre>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/genres/${id}',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Genre.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfGameTagsResponse> getListOfGameTags(baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameTagsResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/tags',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameTagsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<Tag> getTagDetail(id, key) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'key': key};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<Tag>(
+        Options(method: 'GET', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/tags/${id}',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Tag.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfGamePlatformsResponse> getListOfGamePlatforms(
+      baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGamePlatformsResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/platforms',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGamePlatformsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<Platform> getPlatformDetail(id, key) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'key': key};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Platform>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/platforms/${id}',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Platform.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfGameParentPlatformsResponse> getListOfParentPlatforms(
+      baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameParentPlatformsResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/platforms/list/parents',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameParentPlatformsResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ListOfGameStoresResponse> getListOfGameStores(
+      baseListingRequest) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(baseListingRequest.toJson());
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ListOfGameStoresResponse>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/stores',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = ListOfGameStoresResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<Store> getStoreDetail(id, key) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'key': key};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Store>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/stores/${id}',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Store.fromJson(_result.data!);
     return value;
   }
 

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'list_of_game_request.dart';
+part of 'list_of_games_request.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-ListOfGameRequest _$ListOfGameRequestFromJson(Map<String, dynamic> json) {
-  return _ListOfGameRequest.fromJson(json);
+ListOfGamesRequest _$ListOfGamesRequestFromJson(Map<String, dynamic> json) {
+  return _ListOfGamesRequest.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ListOfGameRequest {
+mixin _$ListOfGamesRequest {
   int get page => throw _privateConstructorUsedError;
   @JsonKey(name: 'page_size')
   int get pageSize => throw _privateConstructorUsedError;
@@ -47,15 +47,15 @@ mixin _$ListOfGameRequest {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ListOfGameRequestCopyWith<ListOfGameRequest> get copyWith =>
+  $ListOfGamesRequestCopyWith<ListOfGamesRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListOfGameRequestCopyWith<$Res> {
-  factory $ListOfGameRequestCopyWith(
-          ListOfGameRequest value, $Res Function(ListOfGameRequest) then) =
-      _$ListOfGameRequestCopyWithImpl<$Res>;
+abstract class $ListOfGamesRequestCopyWith<$Res> {
+  factory $ListOfGamesRequestCopyWith(
+          ListOfGamesRequest value, $Res Function(ListOfGamesRequest) then) =
+      _$ListOfGamesRequestCopyWithImpl<$Res>;
   $Res call(
       {int page,
       @JsonKey(name: 'page_size') int pageSize,
@@ -75,13 +75,13 @@ abstract class $ListOfGameRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListOfGameRequestCopyWithImpl<$Res>
-    implements $ListOfGameRequestCopyWith<$Res> {
-  _$ListOfGameRequestCopyWithImpl(this._value, this._then);
+class _$ListOfGamesRequestCopyWithImpl<$Res>
+    implements $ListOfGamesRequestCopyWith<$Res> {
+  _$ListOfGamesRequestCopyWithImpl(this._value, this._then);
 
-  final ListOfGameRequest _value;
+  final ListOfGamesRequest _value;
   // ignore: unused_field
-  final $Res Function(ListOfGameRequest) _then;
+  final $Res Function(ListOfGamesRequest) _then;
 
   @override
   $Res call({
@@ -167,11 +167,11 @@ class _$ListOfGameRequestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_ListOfGameRequestCopyWith<$Res>
-    implements $ListOfGameRequestCopyWith<$Res> {
-  factory _$$_ListOfGameRequestCopyWith(_$_ListOfGameRequest value,
-          $Res Function(_$_ListOfGameRequest) then) =
-      __$$_ListOfGameRequestCopyWithImpl<$Res>;
+abstract class _$$_ListOfGamesRequestCopyWith<$Res>
+    implements $ListOfGamesRequestCopyWith<$Res> {
+  factory _$$_ListOfGamesRequestCopyWith(_$_ListOfGamesRequest value,
+          $Res Function(_$_ListOfGamesRequest) then) =
+      __$$_ListOfGamesRequestCopyWithImpl<$Res>;
   @override
   $Res call(
       {int page,
@@ -192,15 +192,15 @@ abstract class _$$_ListOfGameRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ListOfGameRequestCopyWithImpl<$Res>
-    extends _$ListOfGameRequestCopyWithImpl<$Res>
-    implements _$$_ListOfGameRequestCopyWith<$Res> {
-  __$$_ListOfGameRequestCopyWithImpl(
-      _$_ListOfGameRequest _value, $Res Function(_$_ListOfGameRequest) _then)
-      : super(_value, (v) => _then(v as _$_ListOfGameRequest));
+class __$$_ListOfGamesRequestCopyWithImpl<$Res>
+    extends _$ListOfGamesRequestCopyWithImpl<$Res>
+    implements _$$_ListOfGamesRequestCopyWith<$Res> {
+  __$$_ListOfGamesRequestCopyWithImpl(
+      _$_ListOfGamesRequest _value, $Res Function(_$_ListOfGamesRequest) _then)
+      : super(_value, (v) => _then(v as _$_ListOfGamesRequest));
 
   @override
-  _$_ListOfGameRequest get _value => super._value as _$_ListOfGameRequest;
+  _$_ListOfGamesRequest get _value => super._value as _$_ListOfGamesRequest;
 
   @override
   $Res call({
@@ -220,7 +220,7 @@ class __$$_ListOfGameRequestCopyWithImpl<$Res>
     Object? creators = freezed,
     Object? orderBy = freezed,
   }) {
-    return _then(_$_ListOfGameRequest(
+    return _then(_$_ListOfGamesRequest(
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -287,8 +287,8 @@ class __$$_ListOfGameRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ListOfGameRequest implements _ListOfGameRequest {
-  _$_ListOfGameRequest(
+class _$_ListOfGamesRequest implements _ListOfGamesRequest {
+  _$_ListOfGamesRequest(
       {required this.page,
       @JsonKey(name: 'page_size') required this.pageSize,
       required this.key,
@@ -305,8 +305,8 @@ class _$_ListOfGameRequest implements _ListOfGameRequest {
       this.creators,
       @JsonKey(name: 'ordering') this.orderBy});
 
-  factory _$_ListOfGameRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_ListOfGameRequestFromJson(json);
+  factory _$_ListOfGamesRequest.fromJson(Map<String, dynamic> json) =>
+      _$$_ListOfGamesRequestFromJson(json);
 
   @override
   final int page;
@@ -350,14 +350,14 @@ class _$_ListOfGameRequest implements _ListOfGameRequest {
 
   @override
   String toString() {
-    return 'ListOfGameRequest(page: $page, pageSize: $pageSize, key: $key, search: $search, searchPrecise: $searchPrecise, searchExact: $searchExact, parentPlatforms: $parentPlatforms, platforms: $platforms, stores: $stores, developers: $developers, publishers: $publishers, genres: $genres, tags: $tags, creators: $creators, orderBy: $orderBy)';
+    return 'ListOfGamesRequest(page: $page, pageSize: $pageSize, key: $key, search: $search, searchPrecise: $searchPrecise, searchExact: $searchExact, parentPlatforms: $parentPlatforms, platforms: $platforms, stores: $stores, developers: $developers, publishers: $publishers, genres: $genres, tags: $tags, creators: $creators, orderBy: $orderBy)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ListOfGameRequest &&
+            other is _$_ListOfGamesRequest &&
             const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.pageSize, pageSize) &&
             const DeepCollectionEquality().equals(other.key, key) &&
@@ -402,38 +402,39 @@ class _$_ListOfGameRequest implements _ListOfGameRequest {
 
   @JsonKey(ignore: true)
   @override
-  _$$_ListOfGameRequestCopyWith<_$_ListOfGameRequest> get copyWith =>
-      __$$_ListOfGameRequestCopyWithImpl<_$_ListOfGameRequest>(
+  _$$_ListOfGamesRequestCopyWith<_$_ListOfGamesRequest> get copyWith =>
+      __$$_ListOfGamesRequestCopyWithImpl<_$_ListOfGamesRequest>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ListOfGameRequestToJson(
+    return _$$_ListOfGamesRequestToJson(
       this,
     );
   }
 }
 
-abstract class _ListOfGameRequest implements ListOfGameRequest {
-  factory _ListOfGameRequest(
-      {required final int page,
-      @JsonKey(name: 'page_size') required final int pageSize,
-      required final String key,
-      final String? search,
-      @JsonKey(name: 'search_precise') final bool? searchPrecise,
-      @JsonKey(name: 'search_exact') final bool? searchExact,
-      @JsonKey(name: 'parent_platforms') final String? parentPlatforms,
-      final String? platforms,
-      final String? stores,
-      final String? developers,
-      final String? publishers,
-      final String? genres,
-      final String? tags,
-      final String? creators,
-      @JsonKey(name: 'ordering') final String? orderBy}) = _$_ListOfGameRequest;
+abstract class _ListOfGamesRequest implements ListOfGamesRequest {
+  factory _ListOfGamesRequest(
+          {required final int page,
+          @JsonKey(name: 'page_size') required final int pageSize,
+          required final String key,
+          final String? search,
+          @JsonKey(name: 'search_precise') final bool? searchPrecise,
+          @JsonKey(name: 'search_exact') final bool? searchExact,
+          @JsonKey(name: 'parent_platforms') final String? parentPlatforms,
+          final String? platforms,
+          final String? stores,
+          final String? developers,
+          final String? publishers,
+          final String? genres,
+          final String? tags,
+          final String? creators,
+          @JsonKey(name: 'ordering') final String? orderBy}) =
+      _$_ListOfGamesRequest;
 
-  factory _ListOfGameRequest.fromJson(Map<String, dynamic> json) =
-      _$_ListOfGameRequest.fromJson;
+  factory _ListOfGamesRequest.fromJson(Map<String, dynamic> json) =
+      _$_ListOfGamesRequest.fromJson;
 
   @override
   int get page;
@@ -476,6 +477,6 @@ abstract class _ListOfGameRequest implements ListOfGameRequest {
   String? get orderBy;
   @override
   @JsonKey(ignore: true)
-  _$$_ListOfGameRequestCopyWith<_$_ListOfGameRequest> get copyWith =>
+  _$$_ListOfGamesRequestCopyWith<_$_ListOfGamesRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }

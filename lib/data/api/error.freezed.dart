@@ -23,7 +23,8 @@ mixin _$Failure {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,7 +33,7 @@ mixin _$Failure {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,7 +42,7 @@ mixin _$Failure {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,7 +175,8 @@ class _$Unknown implements Unknown {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) {
     return unknown(message);
   }
@@ -186,7 +188,7 @@ class _$Unknown implements Unknown {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) {
     return unknown?.call(message);
   }
@@ -198,7 +200,7 @@ class _$Unknown implements Unknown {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -338,7 +340,8 @@ class _$CodeFailure implements CodeFailure {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) {
     return codeFailure(code, message);
   }
@@ -350,7 +353,7 @@ class _$CodeFailure implements CodeFailure {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) {
     return codeFailure?.call(code, message);
   }
@@ -362,7 +365,7 @@ class _$CodeFailure implements CodeFailure {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) {
     if (codeFailure != null) {
@@ -493,7 +496,8 @@ class _$NoData implements NoData {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) {
     return noData(message);
   }
@@ -505,7 +509,7 @@ class _$NoData implements NoData {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) {
     return noData?.call(message);
   }
@@ -517,7 +521,7 @@ class _$NoData implements NoData {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) {
     if (noData != null) {
@@ -648,7 +652,8 @@ class _$NoConnection implements NoConnection {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) {
     return noConnection(message);
   }
@@ -660,7 +665,7 @@ class _$NoConnection implements NoConnection {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) {
     return noConnection?.call(message);
   }
@@ -672,7 +677,7 @@ class _$NoConnection implements NoConnection {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -740,7 +745,7 @@ abstract class _$$NoAuthenticationCopyWith<$Res>
           _$NoAuthentication value, $Res Function(_$NoAuthentication) then) =
       __$$NoAuthenticationCopyWithImpl<$Res>;
   @override
-  $Res call({String message});
+  $Res call({String message, DioError dioError});
 }
 
 /// @nodoc
@@ -756,12 +761,17 @@ class __$$NoAuthenticationCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = freezed,
+    Object? dioError = freezed,
   }) {
     return _then(_$NoAuthentication(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      dioError: dioError == freezed
+          ? _value.dioError
+          : dioError // ignore: cast_nullable_to_non_nullable
+              as DioError,
     ));
   }
 }
@@ -769,15 +779,18 @@ class __$$NoAuthenticationCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NoAuthentication implements NoAuthentication {
-  const _$NoAuthentication({this.message = 'Please sign in first!'});
+  const _$NoAuthentication(
+      {this.message = 'Please sign in first!', required this.dioError});
 
   @override
   @JsonKey()
   final String message;
+  @override
+  final DioError dioError;
 
   @override
   String toString() {
-    return 'Failure.noAuthentication(message: $message)';
+    return 'Failure.noAuthentication(message: $message, dioError: $dioError)';
   }
 
   @override
@@ -785,12 +798,15 @@ class _$NoAuthentication implements NoAuthentication {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoAuthentication &&
-            const DeepCollectionEquality().equals(other.message, message));
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.dioError, dioError));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(dioError));
 
   @JsonKey(ignore: true)
   @override
@@ -804,9 +820,10 @@ class _$NoAuthentication implements NoAuthentication {
     required TResult Function(int code, String message) codeFailure,
     required TResult Function(String message) noData,
     required TResult Function(String message) noConnection,
-    required TResult Function(String message) noAuthentication,
+    required TResult Function(String message, DioError dioError)
+        noAuthentication,
   }) {
-    return noAuthentication(message);
+    return noAuthentication(message, dioError);
   }
 
   @override
@@ -816,9 +833,9 @@ class _$NoAuthentication implements NoAuthentication {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
   }) {
-    return noAuthentication?.call(message);
+    return noAuthentication?.call(message, dioError);
   }
 
   @override
@@ -828,11 +845,11 @@ class _$NoAuthentication implements NoAuthentication {
     TResult Function(int code, String message)? codeFailure,
     TResult Function(String message)? noData,
     TResult Function(String message)? noConnection,
-    TResult Function(String message)? noAuthentication,
+    TResult Function(String message, DioError dioError)? noAuthentication,
     required TResult orElse(),
   }) {
     if (noAuthentication != null) {
-      return noAuthentication(message);
+      return noAuthentication(message, dioError);
     }
     return orElse();
   }
@@ -879,10 +896,13 @@ class _$NoAuthentication implements NoAuthentication {
 }
 
 abstract class NoAuthentication implements Failure {
-  const factory NoAuthentication({final String message}) = _$NoAuthentication;
+  const factory NoAuthentication(
+      {final String message,
+      required final DioError dioError}) = _$NoAuthentication;
 
   @override
   String get message;
+  DioError get dioError;
   @override
   @JsonKey(ignore: true)
   _$$NoAuthenticationCopyWith<_$NoAuthentication> get copyWith =>

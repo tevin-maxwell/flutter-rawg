@@ -1,2 +1,12 @@
+export 'list_of_game_achievements_response/list_of_game_achievements_response.dart';
 export 'list_of_game_creators_response/list_of_game_creators_response.dart';
-// export 'list_of_game_developers_response/'
+export 'list_of_game_developers_response/list_of_game_developers_response.dart';
+export 'list_of_game_genres_response/list_of_game_genres_response.dart';
+export 'list_of_game_parent_platforms_response/list_of_game_parent_platforms_response.dart';
+export 'list_of_game_platforms_response/list_of_game_platforms_response.dart';
+export 'list_of_game_screenshots_response/list_of_game_screenshots_response.dart';
+export 'list_of_game_stores_response/list_of_game_stores_response.dart';
+export 'list_of_game_tags_response/list_of_game_tags_response.dart';
+export 'list_of_game_trailers_response/list_of_game_trailers_response.dart';
+export 'list_of_games_response/list_of_games_response.dart';
+export 'list_of_store_links_by_game_response/list_of_store_links_by_game_response.dart';
