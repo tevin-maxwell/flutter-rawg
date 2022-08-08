@@ -10,9 +10,7 @@ _$_Trailer _$$_TrailerFromJson(Map<String, dynamic> json) => _$_Trailer(
       id: json['id'] as int,
       name: json['name'] as String? ?? '',
       preview: json['preview'] as String? ?? '',
-      links: json['data'] == null
-          ? TrailerLink
-          : TrailerLink.fromJson(json['data'] as Map<String, dynamic>),
+      links: TrailerLink.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_TrailerToJson(_$_Trailer instance) =>

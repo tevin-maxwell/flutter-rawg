@@ -147,7 +147,7 @@ class _$_Trailer implements _Trailer {
       {required this.id,
       this.name = '',
       this.preview = '',
-      @JsonKey(name: 'data') this.links = TrailerLink});
+      @JsonKey(name: 'data') required this.links});
 
   factory _$_Trailer.fromJson(Map<String, dynamic> json) =>
       _$$_TrailerFromJson(json);
@@ -207,7 +207,7 @@ abstract class _Trailer implements Trailer {
       {required final int id,
       final String name,
       final String preview,
-      @JsonKey(name: 'data') final TrailerLink links}) = _$_Trailer;
+      @JsonKey(name: 'data') required final TrailerLink links}) = _$_Trailer;
 
   factory _Trailer.fromJson(Map<String, dynamic> json) = _$_Trailer.fromJson;
 
