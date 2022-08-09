@@ -1,12 +1,15 @@
-package com.example.flutter_rawg
+package kh.com.pada.rawg
 
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+import androidx.annotation.NonNull
 import com.kaopiz.kprogresshud.KProgressHUD
+import io.flutter.plugin.common.MethodChannel
 
 class MainActivity: FlutterActivity() {
 
     private val channel = "ChannelProgressHUD";
-    private val progressHUD: KProgressHUD? = null;
+    private var progressHUD: KProgressHUD? = null;
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)

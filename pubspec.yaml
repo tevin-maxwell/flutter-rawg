@@ -48,6 +48,11 @@ dependencies:
   auto_route: ^4.2.1
   flutter_hooks: ^0.18.5+1
   get_it: ^7.2.0
+  firebase_core: ^1.20.0
+  firebase_auth: ^3.6.2
+  firebase_remote_config: ^2.0.13
+  firebase_storage: ^10.3.4
+  firebase_database: ^9.1.0
 
 dev_dependencies:
   flutter_test:

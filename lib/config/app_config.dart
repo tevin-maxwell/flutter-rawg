@@ -17,4 +17,7 @@ class AppConfig with AppConfigType {
 
   @override
   String get graphqlEndPoint => env?.graphqlEndPoint ?? '';
+
+  @override
+  String get envName => env?.envName ?? '';
 }

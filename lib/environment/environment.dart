@@ -12,8 +12,12 @@ class Environment {
     return DevelopmentEnvironment.development();
   }
 
-  Environment({required this.rawgBaseDomain, required this.graphqlEndPoint});
+  Environment(
+      {required this.rawgBaseDomain,
+      required this.graphqlEndPoint,
+      required this.envName});
 
   final String rawgBaseDomain;
   final String graphqlEndPoint;
+  final String envName;
 }

@@ -4,6 +4,7 @@ extension DevelopmentEnvironment on Environment {
   static Environment development() {
     return Environment(
         rawgBaseDomain: 'https://api.rawg.io/api',
-        graphqlEndPoint: 'https://api.rawg.io/api');
+        graphqlEndPoint: 'https://api.rawg.io/api',
+        envName: 'dev');
   }
 }
