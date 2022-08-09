@@ -8,7 +8,6 @@ part 'base_listing_request.g.dart';
 @freezed
 class BaseListingRequest with _$BaseListingRequest {
   factory BaseListingRequest({
-    required String key,
     @Default(1) int page,
     @Default(10) @JsonKey(name: 'page_size') int pageSize,
     @Default('') String search,

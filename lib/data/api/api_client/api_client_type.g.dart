@@ -34,9 +34,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<CreatorDetail> getGameCreatorDetail(id, key) async {
+  Future<CreatorDetail> getGameCreatorDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -68,9 +68,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<Developer> getDeveloperDetail(id, key) async {
+  Future<Developer> getDeveloperDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -101,9 +101,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<GameDetail> getGameDetail(id, key) async {
+  Future<GameDetail> getGameDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -207,9 +207,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<Genre> getGenreDetail(id, key) async {
+  Future<Genre> getGenreDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -240,9 +240,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<Tag> getTagDetail(id, key) async {
+  Future<Tag> getTagDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<Tag>(
@@ -273,9 +273,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<Platform> getPlatformDetail(id, key) async {
+  Future<Platform> getPlatformDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -325,9 +325,9 @@ class _APIClientType implements APIClientType {
   }
 
   @override
-  Future<Store> getStoreDetail(id, key) async {
+  Future<Store> getStoreDetail(id) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'key': key};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(

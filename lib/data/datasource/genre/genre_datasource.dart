@@ -12,8 +12,7 @@ class GenreDataSource extends GenreDataSourceType {
   @override
   Future<Genre> getGenreDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getGenreDetail(
-        baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getGenreDetail(baseDetailRequest.id);
   }
 
   @override

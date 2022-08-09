@@ -18,6 +18,6 @@ class TagDataSource extends TagDataSourceType {
   @override
   Future<Tag> getTagDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getTagDetail(baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getTagDetail(baseDetailRequest.id);
   }
 }

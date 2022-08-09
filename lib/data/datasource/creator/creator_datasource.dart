@@ -11,8 +11,7 @@ class CreatorDataSource implements CreatorDataSourceType {
   @override
   Future<CreatorDetail> getCreatorDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getGameCreatorDetail(
-        baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getGameCreatorDetail(baseDetailRequest.id);
   }
 
   @override

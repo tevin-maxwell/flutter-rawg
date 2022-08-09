@@ -24,7 +24,6 @@ class PlatformDataSource extends PlatformDataSourceType {
   @override
   Future<Platform> getPlatformDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getPlatformDetail(
-        baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getPlatformDetail(baseDetailRequest.id);
   }
 }

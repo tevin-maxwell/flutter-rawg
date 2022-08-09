@@ -4,8 +4,6 @@ import 'package:flutter_rawg/data/api/api_client/interceptor/curl_log.dart';
 import 'package:flutter_rawg/data/api/api_client/interceptor/query.dart';
 
 class APIClient {
-  static Dio dio = Dio();
-
   static APIClientType apiClient(
       {required String baseDomain,
       String? identityBaseDomain,
@@ -13,7 +11,7 @@ class APIClient {
       bool ignoreToken = false,
       bool ignoreConnection = false,
       required String authToken}) {
-    // final dio = Dio();
+    final dio = Dio();
 
     dio.interceptors
         .add(CurlLogInterceptor(disableRequestBody: disableRequestBodyLogging));

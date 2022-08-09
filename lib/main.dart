@@ -6,7 +6,6 @@ import 'package:flutter_rawg/di/datasource_module.dart';
 import 'package:flutter_rawg/di/repository_module.dart';
 import 'package:flutter_rawg/di/usecase_module.dart';
 import 'package:flutter_rawg/environment/environment.dart';
-import 'package:flutter_rawg/utils/loading_modal.dart';
 
 void main() {
   AppConfig(env: Environment.development());
@@ -46,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage>
         UseCaseModule {
   int _counter = 0;
 
-  void _incrementCounter() {
-    LoadingModal.show();
+  void _incrementCounter() async {
+    // LoadingModal.show();
     setState(() {
       _counter++;
     });

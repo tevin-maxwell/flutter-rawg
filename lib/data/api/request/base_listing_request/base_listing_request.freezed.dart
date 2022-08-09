@@ -20,7 +20,6 @@ BaseListingRequest _$BaseListingRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BaseListingRequest {
-  String get key => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   @JsonKey(name: 'page_size')
   int get pageSize => throw _privateConstructorUsedError;
@@ -40,8 +39,7 @@ abstract class $BaseListingRequestCopyWith<$Res> {
           BaseListingRequest value, $Res Function(BaseListingRequest) then) =
       _$BaseListingRequestCopyWithImpl<$Res>;
   $Res call(
-      {String key,
-      int page,
+      {int page,
       @JsonKey(name: 'page_size') int pageSize,
       String search,
       @JsonKey(name: 'ordering') String? orderBy});
@@ -58,17 +56,12 @@ class _$BaseListingRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? key = freezed,
     Object? page = freezed,
     Object? pageSize = freezed,
     Object? search = freezed,
     Object? orderBy = freezed,
   }) {
     return _then(_value.copyWith(
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -97,8 +90,7 @@ abstract class _$$_BaseListingRequestCopyWith<$Res>
       __$$_BaseListingRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String key,
-      int page,
+      {int page,
       @JsonKey(name: 'page_size') int pageSize,
       String search,
       @JsonKey(name: 'ordering') String? orderBy});
@@ -117,17 +109,12 @@ class __$$_BaseListingRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? key = freezed,
     Object? page = freezed,
     Object? pageSize = freezed,
     Object? search = freezed,
     Object? orderBy = freezed,
   }) {
     return _then(_$_BaseListingRequest(
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -152,8 +139,7 @@ class __$$_BaseListingRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BaseListingRequest implements _BaseListingRequest {
   _$_BaseListingRequest(
-      {required this.key,
-      this.page = 1,
+      {this.page = 1,
       @JsonKey(name: 'page_size') this.pageSize = 10,
       this.search = '',
       @JsonKey(name: 'ordering') this.orderBy});
@@ -161,8 +147,6 @@ class _$_BaseListingRequest implements _BaseListingRequest {
   factory _$_BaseListingRequest.fromJson(Map<String, dynamic> json) =>
       _$$_BaseListingRequestFromJson(json);
 
-  @override
-  final String key;
   @override
   @JsonKey()
   final int page;
@@ -178,7 +162,7 @@ class _$_BaseListingRequest implements _BaseListingRequest {
 
   @override
   String toString() {
-    return 'BaseListingRequest(key: $key, page: $page, pageSize: $pageSize, search: $search, orderBy: $orderBy)';
+    return 'BaseListingRequest(page: $page, pageSize: $pageSize, search: $search, orderBy: $orderBy)';
   }
 
   @override
@@ -186,7 +170,6 @@ class _$_BaseListingRequest implements _BaseListingRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BaseListingRequest &&
-            const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.pageSize, pageSize) &&
             const DeepCollectionEquality().equals(other.search, search) &&
@@ -197,7 +180,6 @@ class _$_BaseListingRequest implements _BaseListingRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(key),
       const DeepCollectionEquality().hash(page),
       const DeepCollectionEquality().hash(pageSize),
       const DeepCollectionEquality().hash(search),
@@ -219,8 +201,7 @@ class _$_BaseListingRequest implements _BaseListingRequest {
 
 abstract class _BaseListingRequest implements BaseListingRequest {
   factory _BaseListingRequest(
-          {required final String key,
-          final int page,
+          {final int page,
           @JsonKey(name: 'page_size') final int pageSize,
           final String search,
           @JsonKey(name: 'ordering') final String? orderBy}) =
@@ -229,8 +210,6 @@ abstract class _BaseListingRequest implements BaseListingRequest {
   factory _BaseListingRequest.fromJson(Map<String, dynamic> json) =
       _$_BaseListingRequest.fromJson;
 
-  @override
-  String get key;
   @override
   int get page;
   @override

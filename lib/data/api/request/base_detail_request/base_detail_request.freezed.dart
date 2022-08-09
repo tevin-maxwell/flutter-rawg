@@ -21,7 +21,6 @@ BaseDetailRequest _$BaseDetailRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BaseDetailRequest {
   int get id => throw _privateConstructorUsedError;
-  String get key => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +33,7 @@ abstract class $BaseDetailRequestCopyWith<$Res> {
   factory $BaseDetailRequestCopyWith(
           BaseDetailRequest value, $Res Function(BaseDetailRequest) then) =
       _$BaseDetailRequestCopyWithImpl<$Res>;
-  $Res call({int id, String key});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -49,17 +48,12 @@ class _$BaseDetailRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? key = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -71,7 +65,7 @@ abstract class _$$_BaseDetailRequestCopyWith<$Res>
           $Res Function(_$_BaseDetailRequest) then) =
       __$$_BaseDetailRequestCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String key});
+  $Res call({int id});
 }
 
 /// @nodoc
@@ -88,17 +82,12 @@ class __$$_BaseDetailRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? key = freezed,
   }) {
     return _then(_$_BaseDetailRequest(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -106,19 +95,17 @@ class __$$_BaseDetailRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BaseDetailRequest implements _BaseDetailRequest {
-  _$_BaseDetailRequest({required this.id, required this.key});
+  _$_BaseDetailRequest({required this.id});
 
   factory _$_BaseDetailRequest.fromJson(Map<String, dynamic> json) =>
       _$$_BaseDetailRequestFromJson(json);
 
   @override
   final int id;
-  @override
-  final String key;
 
   @override
   String toString() {
-    return 'BaseDetailRequest(id: $id, key: $key)';
+    return 'BaseDetailRequest(id: $id)';
   }
 
   @override
@@ -126,16 +113,13 @@ class _$_BaseDetailRequest implements _BaseDetailRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BaseDetailRequest &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.key, key));
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(key));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -152,17 +136,13 @@ class _$_BaseDetailRequest implements _BaseDetailRequest {
 }
 
 abstract class _BaseDetailRequest implements BaseDetailRequest {
-  factory _BaseDetailRequest(
-      {required final int id,
-      required final String key}) = _$_BaseDetailRequest;
+  factory _BaseDetailRequest({required final int id}) = _$_BaseDetailRequest;
 
   factory _BaseDetailRequest.fromJson(Map<String, dynamic> json) =
       _$_BaseDetailRequest.fromJson;
 
   @override
   int get id;
-  @override
-  String get key;
   @override
   @JsonKey(ignore: true)
   _$$_BaseDetailRequestCopyWith<_$_BaseDetailRequest> get copyWith =>

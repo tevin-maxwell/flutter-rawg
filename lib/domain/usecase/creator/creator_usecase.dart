@@ -9,9 +9,8 @@ class CreatorUseCase implements CreatorUseCaseType {
 
   @override
   Future<ListOfGameCreatorsResponse> getListOfGameCreators(
-      {required int page, required int pageSize, required String key}) async {
+      {required int page, required int pageSize}) async {
     return await creatorRepository.getListOfGameCreators(
-        baseListingRequest:
-            BaseListingRequest(key: key, page: page, pageSize: pageSize));
+        baseListingRequest: BaseListingRequest(page: page, pageSize: pageSize));
   }
 }

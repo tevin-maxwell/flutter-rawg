@@ -15,24 +15,21 @@ abstract class APIClientType {
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/creators/{id}')
-  Future<CreatorDetail> getGameCreatorDetail(
-      @Path('id') int id, @Query('key') String key);
+  Future<CreatorDetail> getGameCreatorDetail(@Path('id') int id);
 
   @GET('/developers')
   Future<ListOfGameDevelopersResponse> getListOfGameDevelopers(
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/developers/{id}')
-  Future<Developer> getDeveloperDetail(
-      @Path('id') int id, @Query('key') String key);
+  Future<Developer> getDeveloperDetail(@Path('id') int id);
 
   @GET('/games')
   Future<ListOfGamesResponse> getListOfGames(
       @Queries() ListOfGamesRequest listOfGamesRequest);
 
   @GET('/games/{id}')
-  Future<GameDetail> getGameDetail(
-      @Path('id') int id, @Query('key') String key);
+  Future<GameDetail> getGameDetail(@Path('id') int id);
 
   @GET('/games/{id}/achievements')
   Future<ListOfGameAchievementsResponse> getListOfGameAchievements(
@@ -55,22 +52,21 @@ abstract class APIClientType {
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/genres/{id}')
-  Future<Genre> getGenreDetail(@Path('id') int id, @Query('key') String key);
+  Future<Genre> getGenreDetail(@Path('id') int id);
 
   @GET('/tags')
   Future<ListOfGameTagsResponse> getListOfGameTags(
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/tags/{id}')
-  Future<Tag> getTagDetail(@Path('id') int id, @Query('key') String key);
+  Future<Tag> getTagDetail(@Path('id') int id);
 
   @GET('/platforms')
   Future<ListOfGamePlatformsResponse> getListOfGamePlatforms(
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/platforms/{id}')
-  Future<Platform> getPlatformDetail(
-      @Path('id') int id, @Query('key') String key);
+  Future<Platform> getPlatformDetail(@Path('id') int id);
 
   @GET('/platforms/list/parents')
   Future<ListOfGameParentPlatformsResponse> getListOfParentPlatforms(
@@ -81,5 +77,5 @@ abstract class APIClientType {
       @Queries() BaseListingRequest baseListingRequest);
 
   @GET('/stores/{id}')
-  Future<Store> getStoreDetail(@Path('id') int id, @Query('key') String key);
+  Future<Store> getStoreDetail(@Path('id') int id);
 }

@@ -18,7 +18,6 @@ class StoreDataSource extends StoreDataSourceType {
   @override
   Future<Store> getStoreDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getStoreDetail(
-        baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getStoreDetail(baseDetailRequest.id);
   }
 }

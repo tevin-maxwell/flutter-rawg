@@ -11,7 +11,7 @@ class GameDataSource extends GameDataSourceType {
   @override
   Future<GameDetail> getGameDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getGameDetail(baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getGameDetail(baseDetailRequest.id);
   }
 
   @override

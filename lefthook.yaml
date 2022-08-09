@@ -4,11 +4,10 @@ pre-commit:
     static_code_analysis:
       glob: "*.dart"
       run: flutter analyze
-
-pre-push:
-  parallel: true
-  commands:
     tests:
       run: flutter test
-    static_code_analysis:
-      run: flutter analyze
+# pre-push:
+#   parallel: true
+#   commands:
+#     static_code_analysis:
+#       run: flutter analyze

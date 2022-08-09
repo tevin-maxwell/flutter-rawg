@@ -11,8 +11,7 @@ class DeveloperDataSource extends DeveloperDataSourceType {
   @override
   Future<Developer> getDeveloperDetail(
       {required BaseDetailRequest baseDetailRequest}) async {
-    return apiClient.getDeveloperDetail(
-        baseDetailRequest.id, baseDetailRequest.key);
+    return apiClient.getDeveloperDetail(baseDetailRequest.id);
   }
 
   @override

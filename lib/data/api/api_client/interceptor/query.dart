@@ -5,7 +5,7 @@ import 'package:flutter_rawg/data/api/error.dart';
 class QueryInterceptor extends InterceptorsWrapper {
   static const _contentType = 'content-type';
   static const _applicationJson = 'application/json';
-  static const _authorization = 'Authorization';
+  // static const _authorization = 'Authorization';
 
   final String? identityBaseDomain;
   final bool expectResponseJson;
@@ -31,25 +31,15 @@ class QueryInterceptor extends InterceptorsWrapper {
       }
     }
     if (!ignoreToken) {
-      options.headers.addAll(<String, String>{_authorization: authToken});
+      options.queryParameters.addEntries({'key': authToken}.entries);
     }
+
     return super.onRequest(options, handler);
   }
 
   @override
   Future onResponse(
       Response response, ResponseInterceptorHandler handler) async {
-    final isInValidAuthenticationResponse =
-        await _isInValidAuthenticationResponse(response);
-    if (isInValidAuthenticationResponse) {
-      DioError dioError = DioError(
-        requestOptions: response.requestOptions,
-        response: response,
-        type: DioErrorType.response,
-        error: 'Invalid token. Please try logging in again!',
-      );
-      throw NoAuthentication(dioError: dioError);
-    }
     if (!isResponseOkButNoContent(response) && expectResponseJson) {
       throw DioError(
         requestOptions: response.requestOptions,
@@ -62,8 +52,37 @@ class QueryInterceptor extends InterceptorsWrapper {
     return super.onResponse(response, handler);
   }
 
-  Future<bool> _isInValidAuthenticationResponse(Response? response) async {
-    return response?.statusCode == 401;
+  @override
+  void onError(DioError err, ErrorInterceptorHandler handler) async {
+    if (err.type == DioErrorType.response) {
+      switch (err.response?.statusCode) {
+        case 401:
+          err.error = const Unauthorized();
+          break;
+        case 403:
+          err.error = const Forbidden();
+          break;
+        case 404:
+          err.error = const NotFound();
+          break;
+        case 500:
+          err.error = const InternalServerError();
+          break;
+      }
+    }
+
+    if (err.type == DioErrorType.cancel) err.error = const UserCancelled();
+
+    if (err.type == DioErrorType.sendTimeout ||
+        err.type == DioErrorType.receiveTimeout) {
+      err.error = const ServerTimeOut();
+    }
+
+    if (err.type == DioErrorType.connectTimeout) {
+      err.error = const NoConnection();
+    }
+
+    super.onError(err, handler);
   }
 
   bool isResponseOkButNoContent(Response response) =>
