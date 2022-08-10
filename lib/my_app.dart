@@ -1,81 +1,43 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rawg/di/client_module.dart';
 import 'package:flutter_rawg/di/config_module.dart';
 import 'package:flutter_rawg/di/datasource_module.dart';
 import 'package:flutter_rawg/di/repository_module.dart';
 import 'package:flutter_rawg/di/usecase_module.dart';
+import 'router/app_router.gr.dart';
 
 Future<void> myMain() async {
-  // AppConfig(env: Environment.development());
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage>
+class MyApp extends HookWidget
     with
         ConfigModule,
         ClientModule,
         DatasourceModule,
         RepositoryModule,
         UseCaseModule {
-  int _counter = 0;
+  MyApp({Key? key}) : super(key: key);
 
-  void _incrementCounter() async {
-    // LoadingModal.show();
-
-    setState(() {
-      _counter++;
-    });
-  }
+  final AppRouter router = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(appConfig.envName),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    return MaterialApp.router(
+      title: 'Flutter Rawg',
+      // theme: AppTheme.define(),
+      routerDelegate: AutoRouterDelegate(router),
+      routeInformationParser: router.defaultRouteParser(),
+      builder: (context, child) {
+        return GestureDetector(
+          // onTap: () {
+          //   KeyboardHidden.hideKeyboard(context);
+          // },
+          child: child,
+        );
+      },
     );
   }
 }

@@ -14,10 +14,10 @@ class Environment {
 
   Environment(
       {required this.rawgBaseDomain,
-      required this.graphqlEndPoint,
+      required this.firebaseStorageBucket,
       required this.envName});
 
   final String rawgBaseDomain;
-  final String graphqlEndPoint;
+  final String firebaseStorageBucket;
   final String envName;
 }

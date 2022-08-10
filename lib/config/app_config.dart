@@ -16,7 +16,7 @@ class AppConfig with AppConfigType {
   String get baseDomain => env?.rawgBaseDomain ?? '';
 
   @override
-  String get graphqlEndPoint => env?.graphqlEndPoint ?? '';
+  String get firebaseStorageBucket => env?.firebaseStorageBucket ?? '';
 
   @override
   String get envName => env?.envName ?? '';
