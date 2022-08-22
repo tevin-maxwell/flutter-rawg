@@ -12,6 +12,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
+import 'package:flutter/cupertino.dart' as _i4;
 import 'package:flutter/material.dart' as _i3;
 
 import '../presentation/presentation.dart' as _i1;
@@ -22,9 +23,9 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
-    BrowsePage.name: (routeData) {
+    DashboardPage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.BrowsePage());
+          routeData: routeData, child: const _i1.DashboardPage());
     },
     BrowseGenreSelectionPage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
@@ -39,8 +40,14 @@ class AppRouter extends _i2.RootStackRouter {
           routeData: routeData, child: const _i1.BrowseTagSelectionPage());
     },
     LoginPage.name: (routeData) {
-      return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.LoginPage());
+      final args =
+          routeData.argsAs<LoginPageArgs>(orElse: () => const LoginPageArgs());
+      return _i2.CustomPage<dynamic>(
+          routeData: routeData,
+          child: _i1.LoginPage(key: args.key),
+          transitionsBuilder: _i2.TransitionsBuilders.slideBottom,
+          opaque: true,
+          barrierDismissible: false);
     },
     LoginCodeVerificationPage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
@@ -53,10 +60,6 @@ class AppRouter extends _i2.RootStackRouter {
     OnboardingPage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.OnboardingPage());
-    },
-    ProfilePage.name: (routeData) {
-      return _i2.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.ProfilePage());
     },
     ProfileLibraryPage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
@@ -97,12 +100,30 @@ class AppRouter extends _i2.RootStackRouter {
     SettingLanguagePage.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.SettingLanguagePage());
+    },
+    BrowsePage.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i1.BrowsePage());
+    },
+    HomePage.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i1.HomePage());
+    },
+    ProfilePage.name: (routeData) {
+      return _i2.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i1.ProfilePage());
     }
   };
 
   @override
   List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig(BrowsePage.name, path: '/'),
+        _i2.RouteConfig(DashboardPage.name, path: '/', children: [
+          _i2.RouteConfig(BrowsePage.name,
+              path: 'browse-page', parent: DashboardPage.name),
+          _i2.RouteConfig(HomePage.name, path: '', parent: DashboardPage.name),
+          _i2.RouteConfig(ProfilePage.name,
+              path: 'profile-page', parent: DashboardPage.name)
+        ]),
         _i2.RouteConfig(BrowseGenreSelectionPage.name,
             path: '/browse-genre-selection-page'),
         _i2.RouteConfig(BrowseResultPage.name, path: '/browse-result-page'),
@@ -114,7 +135,6 @@ class AppRouter extends _i2.RootStackRouter {
         _i2.RouteConfig(LoginPendingDeletePage.name,
             path: '/login-pending-delete-page'),
         _i2.RouteConfig(OnboardingPage.name, path: '/onboarding-page'),
-        _i2.RouteConfig(ProfilePage.name, path: '/profile-page'),
         _i2.RouteConfig(ProfileLibraryPage.name, path: '/profile-library-page'),
         _i2.RouteConfig(ProfileWishlistPage.name,
             path: '/profile-wishlist-page'),
@@ -136,11 +156,12 @@ class AppRouter extends _i2.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.BrowsePage]
-class BrowsePage extends _i2.PageRouteInfo<void> {
-  const BrowsePage() : super(BrowsePage.name, path: '/');
+/// [_i1.DashboardPage]
+class DashboardPage extends _i2.PageRouteInfo<void> {
+  const DashboardPage({List<_i2.PageRouteInfo>? children})
+      : super(DashboardPage.name, path: '/', initialChildren: children);
 
-  static const String name = 'BrowsePage';
+  static const String name = 'DashboardPage';
 }
 
 /// generated route for
@@ -173,10 +194,23 @@ class BrowseTagSelectionPage extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.LoginPage]
-class LoginPage extends _i2.PageRouteInfo<void> {
-  const LoginPage() : super(LoginPage.name, path: '/login-page');
+class LoginPage extends _i2.PageRouteInfo<LoginPageArgs> {
+  LoginPage({_i4.Key? key})
+      : super(LoginPage.name,
+            path: '/login-page', args: LoginPageArgs(key: key));
 
   static const String name = 'LoginPage';
+}
+
+class LoginPageArgs {
+  const LoginPageArgs({this.key});
+
+  final _i4.Key? key;
+
+  @override
+  String toString() {
+    return 'LoginPageArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -204,14 +238,6 @@ class OnboardingPage extends _i2.PageRouteInfo<void> {
   const OnboardingPage() : super(OnboardingPage.name, path: '/onboarding-page');
 
   static const String name = 'OnboardingPage';
-}
-
-/// generated route for
-/// [_i1.ProfilePage]
-class ProfilePage extends _i2.PageRouteInfo<void> {
-  const ProfilePage() : super(ProfilePage.name, path: '/profile-page');
-
-  static const String name = 'ProfilePage';
 }
 
 /// generated route for
@@ -306,4 +332,28 @@ class SettingLanguagePage extends _i2.PageRouteInfo<void> {
       : super(SettingLanguagePage.name, path: '/setting-language-page');
 
   static const String name = 'SettingLanguagePage';
+}
+
+/// generated route for
+/// [_i1.BrowsePage]
+class BrowsePage extends _i2.PageRouteInfo<void> {
+  const BrowsePage() : super(BrowsePage.name, path: 'browse-page');
+
+  static const String name = 'BrowsePage';
+}
+
+/// generated route for
+/// [_i1.HomePage]
+class HomePage extends _i2.PageRouteInfo<void> {
+  const HomePage() : super(HomePage.name, path: '');
+
+  static const String name = 'HomePage';
+}
+
+/// generated route for
+/// [_i1.ProfilePage]
+class ProfilePage extends _i2.PageRouteInfo<void> {
+  const ProfilePage() : super(ProfilePage.name, path: 'profile-page');
+
+  static const String name = 'ProfilePage';
 }

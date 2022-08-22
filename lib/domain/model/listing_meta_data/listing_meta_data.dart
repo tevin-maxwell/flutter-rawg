@@ -6,7 +6,9 @@ part 'listing_meta_data.g.dart';
 @freezed
 class ListingMetaData with _$ListingMetaData {
   factory ListingMetaData(
-      {required int count, String? next, String? previous}) = _ListingMetaData;
+      {@JsonKey(name: 'count') required int count,
+      @JsonKey(name: 'next') String? next,
+      @JsonKey(name: 'previous') String? previous}) = _ListingMetaData;
 
   factory ListingMetaData.fromJson(Map<String, dynamic> json) =>
       _$ListingMetaDataFromJson(json);

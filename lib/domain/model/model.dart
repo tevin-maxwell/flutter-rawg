@@ -1,4 +1,5 @@
 export 'achievement/achievement.dart';
+export 'browse_page_data/browse_page_data.dart';
 export 'creator/creator.dart';
 export 'creator_detail/creator_detail.dart';
 export 'developer/developer.dart';

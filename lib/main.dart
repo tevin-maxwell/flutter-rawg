@@ -1,4 +1,4 @@
-import 'my_app.dart';
+import 'initialize.dart';
 
 Future<void> main() async {
   await myMain();

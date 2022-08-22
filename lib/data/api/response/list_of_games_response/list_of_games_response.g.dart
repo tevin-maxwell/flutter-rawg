@@ -9,8 +9,9 @@ part of 'list_of_games_response.dart';
 _$_ListOfGamesResponse _$$_ListOfGamesResponseFromJson(
         Map<String, dynamic> json) =>
     _$_ListOfGamesResponse(
-      listingMetaData: ListingMetaData.fromJson(
-          json['listingMetaData'] as Map<String, dynamic>),
+      count: json['count'] as int,
+      next: json['next'] as String?,
+      previous: json['previous'] as String?,
       games: (json['results'] as List<dynamic>?)
               ?.map((e) => Game.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -20,6 +21,8 @@ _$_ListOfGamesResponse _$$_ListOfGamesResponseFromJson(
 Map<String, dynamic> _$$_ListOfGamesResponseToJson(
         _$_ListOfGamesResponse instance) =>
     <String, dynamic>{
-      'listingMetaData': instance.listingMetaData,
+      'count': instance.count,
+      'next': instance.next,
+      'previous': instance.previous,
       'results': instance.games,
     };

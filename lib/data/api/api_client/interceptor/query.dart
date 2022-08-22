@@ -30,6 +30,9 @@ class QueryInterceptor extends InterceptorsWrapper {
         return _validateConnection(options, handler);
       }
     }
+
+    options.queryParameters.removeWhere((key, value) => value == null);
+
     if (!ignoreToken) {
       options.queryParameters.addEntries({'key': authToken}.entries);
     }

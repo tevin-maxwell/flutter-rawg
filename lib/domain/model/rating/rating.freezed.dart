@@ -22,7 +22,7 @@ Rating _$RatingFromJson(Map<String, dynamic> json) {
 mixin _$Rating {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  int get count => throw _privateConstructorUsedError;
+  int? get count => throw _privateConstructorUsedError;
   double get percent => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ mixin _$Rating {
 abstract class $RatingCopyWith<$Res> {
   factory $RatingCopyWith(Rating value, $Res Function(Rating) then) =
       _$RatingCopyWithImpl<$Res>;
-  $Res call({int id, String title, int count, double percent});
+  $Res call({int id, String title, int? count, double percent});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$RatingCopyWithImpl<$Res> implements $RatingCopyWith<$Res> {
       count: count == freezed
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       percent: percent == freezed
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
@@ -78,7 +78,7 @@ abstract class _$$_RatingCopyWith<$Res> implements $RatingCopyWith<$Res> {
   factory _$$_RatingCopyWith(_$_Rating value, $Res Function(_$_Rating) then) =
       __$$_RatingCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String title, int count, double percent});
+  $Res call({int id, String title, int? count, double percent});
 }
 
 /// @nodoc
@@ -109,7 +109,7 @@ class __$$_RatingCopyWithImpl<$Res> extends _$RatingCopyWithImpl<$Res>
       count: count == freezed
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       percent: percent == freezed
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
@@ -134,7 +134,7 @@ class _$_Rating implements _Rating {
   final String title;
   @override
   @JsonKey()
-  final int count;
+  final int? count;
   @override
   @JsonKey()
   final double percent;
@@ -181,7 +181,7 @@ abstract class _Rating implements Rating {
   factory _Rating(
       {required final int id,
       final String title,
-      final int count,
+      final int? count,
       final double percent}) = _$_Rating;
 
   factory _Rating.fromJson(Map<String, dynamic> json) = _$_Rating.fromJson;
@@ -191,7 +191,7 @@ abstract class _Rating implements Rating {
   @override
   String get title;
   @override
-  int get count;
+  int? get count;
   @override
   double get percent;
   @override

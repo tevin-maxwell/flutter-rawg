@@ -4,15 +4,29 @@ import 'package:flutter_rawg/presentation/presentation.dart';
 // part 'app_router.gr.dart';
 
 @MaterialAutoRouter(replaceInRouteName: 'Page,Route', routes: <AutoRoute>[
-  AutoRoute(page: BrowsePage, name: 'BrowsePage', initial: true),
+  AutoRoute(
+      page: DashboardPage,
+      name: 'DashboardPage',
+      children: [
+        AutoRoute(page: BrowsePage, name: 'BrowsePage'),
+        AutoRoute(
+          page: HomePage,
+          name: 'HomePage',
+          initial: true,
+        ),
+        AutoRoute(page: ProfilePage, name: 'ProfilePage'),
+      ],
+      initial: true),
   AutoRoute(page: BrowseGenreSelectionPage, name: 'BrowseGenreSelectionPage'),
   AutoRoute(page: BrowseResultPage, name: 'BrowseResultPage'),
   AutoRoute(page: BrowseTagSelectionPage, name: 'BrowseTagSelectionPage'),
-  AutoRoute(page: LoginPage, name: 'LoginPage'),
+  CustomRoute(
+      page: LoginPage,
+      name: 'LoginPage',
+      transitionsBuilder: TransitionsBuilders.slideBottom),
   AutoRoute(page: LoginCodeVerificationPage, name: 'LoginCodeVerificationPage'),
   AutoRoute(page: LoginPendingDeletePage, name: 'LoginPendingDeletePage'),
   AutoRoute(page: OnboardingPage, name: 'OnboardingPage'),
-  AutoRoute(page: ProfilePage, name: 'ProfilePage'),
   AutoRoute(page: ProfileLibraryPage, name: 'ProfileLibraryPage'),
   AutoRoute(page: ProfileWishlistPage, name: 'ProfileWishlistPage'),
   AutoRoute(page: RegisterCompletePage, name: 'RegisterCompletePage'),

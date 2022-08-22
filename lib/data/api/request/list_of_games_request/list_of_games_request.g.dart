@@ -9,9 +9,8 @@ part of 'list_of_games_request.dart';
 _$_ListOfGamesRequest _$$_ListOfGamesRequestFromJson(
         Map<String, dynamic> json) =>
     _$_ListOfGamesRequest(
-      page: json['page'] as int,
-      pageSize: json['page_size'] as int,
-      key: json['key'] as String,
+      page: json['page'] as int? ?? 1,
+      pageSize: json['page_size'] as int? ?? 10,
       search: json['search'] as String?,
       searchPrecise: json['search_precise'] as bool?,
       searchExact: json['search_exact'] as bool?,
@@ -31,7 +30,6 @@ Map<String, dynamic> _$$_ListOfGamesRequestToJson(
     <String, dynamic>{
       'page': instance.page,
       'page_size': instance.pageSize,
-      'key': instance.key,
       'search': instance.search,
       'search_precise': instance.searchPrecise,
       'search_exact': instance.searchExact,

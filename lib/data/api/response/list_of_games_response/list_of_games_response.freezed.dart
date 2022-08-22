@@ -20,7 +20,9 @@ ListOfGamesResponse _$ListOfGamesResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ListOfGamesResponse {
-  ListingMetaData get listingMetaData => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
+  String? get next => throw _privateConstructorUsedError;
+  String? get previous => throw _privateConstructorUsedError;
   @JsonKey(name: 'results')
   List<Game> get games => throw _privateConstructorUsedError;
 
@@ -36,10 +38,10 @@ abstract class $ListOfGamesResponseCopyWith<$Res> {
           ListOfGamesResponse value, $Res Function(ListOfGamesResponse) then) =
       _$ListOfGamesResponseCopyWithImpl<$Res>;
   $Res call(
-      {ListingMetaData listingMetaData,
+      {int count,
+      String? next,
+      String? previous,
       @JsonKey(name: 'results') List<Game> games});
-
-  $ListingMetaDataCopyWith<$Res> get listingMetaData;
 }
 
 /// @nodoc
@@ -53,26 +55,29 @@ class _$ListOfGamesResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? listingMetaData = freezed,
+    Object? count = freezed,
+    Object? next = freezed,
+    Object? previous = freezed,
     Object? games = freezed,
   }) {
     return _then(_value.copyWith(
-      listingMetaData: listingMetaData == freezed
-          ? _value.listingMetaData
-          : listingMetaData // ignore: cast_nullable_to_non_nullable
-              as ListingMetaData,
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      next: next == freezed
+          ? _value.next
+          : next // ignore: cast_nullable_to_non_nullable
+              as String?,
+      previous: previous == freezed
+          ? _value.previous
+          : previous // ignore: cast_nullable_to_non_nullable
+              as String?,
       games: games == freezed
           ? _value.games
           : games // ignore: cast_nullable_to_non_nullable
               as List<Game>,
     ));
-  }
-
-  @override
-  $ListingMetaDataCopyWith<$Res> get listingMetaData {
-    return $ListingMetaDataCopyWith<$Res>(_value.listingMetaData, (value) {
-      return _then(_value.copyWith(listingMetaData: value));
-    });
   }
 }
 
@@ -84,11 +89,10 @@ abstract class _$$_ListOfGamesResponseCopyWith<$Res>
       __$$_ListOfGamesResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ListingMetaData listingMetaData,
+      {int count,
+      String? next,
+      String? previous,
       @JsonKey(name: 'results') List<Game> games});
-
-  @override
-  $ListingMetaDataCopyWith<$Res> get listingMetaData;
 }
 
 /// @nodoc
@@ -104,14 +108,24 @@ class __$$_ListOfGamesResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? listingMetaData = freezed,
+    Object? count = freezed,
+    Object? next = freezed,
+    Object? previous = freezed,
     Object? games = freezed,
   }) {
     return _then(_$_ListOfGamesResponse(
-      listingMetaData: listingMetaData == freezed
-          ? _value.listingMetaData
-          : listingMetaData // ignore: cast_nullable_to_non_nullable
-              as ListingMetaData,
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      next: next == freezed
+          ? _value.next
+          : next // ignore: cast_nullable_to_non_nullable
+              as String?,
+      previous: previous == freezed
+          ? _value.previous
+          : previous // ignore: cast_nullable_to_non_nullable
+              as String?,
       games: games == freezed
           ? _value._games
           : games // ignore: cast_nullable_to_non_nullable
@@ -124,7 +138,9 @@ class __$$_ListOfGamesResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ListOfGamesResponse implements _ListOfGamesResponse {
   _$_ListOfGamesResponse(
-      {required this.listingMetaData,
+      {required this.count,
+      this.next,
+      this.previous,
       @JsonKey(name: 'results') final List<Game> games = const []})
       : _games = games;
 
@@ -132,7 +148,11 @@ class _$_ListOfGamesResponse implements _ListOfGamesResponse {
       _$$_ListOfGamesResponseFromJson(json);
 
   @override
-  final ListingMetaData listingMetaData;
+  final int count;
+  @override
+  final String? next;
+  @override
+  final String? previous;
   final List<Game> _games;
   @override
   @JsonKey(name: 'results')
@@ -143,7 +163,7 @@ class _$_ListOfGamesResponse implements _ListOfGamesResponse {
 
   @override
   String toString() {
-    return 'ListOfGamesResponse(listingMetaData: $listingMetaData, games: $games)';
+    return 'ListOfGamesResponse(count: $count, next: $next, previous: $previous, games: $games)';
   }
 
   @override
@@ -151,8 +171,9 @@ class _$_ListOfGamesResponse implements _ListOfGamesResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ListOfGamesResponse &&
-            const DeepCollectionEquality()
-                .equals(other.listingMetaData, listingMetaData) &&
+            const DeepCollectionEquality().equals(other.count, count) &&
+            const DeepCollectionEquality().equals(other.next, next) &&
+            const DeepCollectionEquality().equals(other.previous, previous) &&
             const DeepCollectionEquality().equals(other._games, _games));
   }
 
@@ -160,7 +181,9 @@ class _$_ListOfGamesResponse implements _ListOfGamesResponse {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(listingMetaData),
+      const DeepCollectionEquality().hash(count),
+      const DeepCollectionEquality().hash(next),
+      const DeepCollectionEquality().hash(previous),
       const DeepCollectionEquality().hash(_games));
 
   @JsonKey(ignore: true)
@@ -179,7 +202,9 @@ class _$_ListOfGamesResponse implements _ListOfGamesResponse {
 
 abstract class _ListOfGamesResponse implements ListOfGamesResponse {
   factory _ListOfGamesResponse(
-          {required final ListingMetaData listingMetaData,
+          {required final int count,
+          final String? next,
+          final String? previous,
           @JsonKey(name: 'results') final List<Game> games}) =
       _$_ListOfGamesResponse;
 
@@ -187,7 +212,11 @@ abstract class _ListOfGamesResponse implements ListOfGamesResponse {
       _$_ListOfGamesResponse.fromJson;
 
   @override
-  ListingMetaData get listingMetaData;
+  int get count;
+  @override
+  String? get next;
+  @override
+  String? get previous;
   @override
   @JsonKey(name: 'results')
   List<Game> get games;

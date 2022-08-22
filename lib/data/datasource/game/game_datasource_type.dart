@@ -3,7 +3,7 @@ import 'package:flutter_rawg/data/api/response/response.dart';
 import 'package:flutter_rawg/domain/model/model.dart';
 
 abstract class GameDataSourceType {
-  Future<ListOfGamesResponse> getListOfGames(
+  Future<dynamic> getListOfGames(
       {required ListOfGamesRequest listOfGamesRequest});
 
   Future<GameDetail> getGameDetail(

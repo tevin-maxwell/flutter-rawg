@@ -2,6 +2,8 @@ export 'browse/browse_page.dart';
 export 'browse_genre_selection/browse_genre_selection_page.dart';
 export 'browse_result/browse_result_page.dart';
 export 'browse_tag_selection/browse_tag_selection_page.dart';
+export 'dashboard/dashboard_page.dart';
+export 'home/home_page.dart';
 export 'login/login_page.dart';
 export 'login_code_verification/login_code_verification_page.dart';
 export 'login_pending_delete/login_pending_delete_page.dart';

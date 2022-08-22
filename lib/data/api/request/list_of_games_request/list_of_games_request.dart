@@ -8,9 +8,8 @@ part 'list_of_games_request.g.dart';
 @freezed
 class ListOfGamesRequest with _$ListOfGamesRequest {
   factory ListOfGamesRequest({
-    required int page,
-    @JsonKey(name: 'page_size') required int pageSize,
-    required String key,
+    @Default(1) int page,
+    @Default(10) @JsonKey(name: 'page_size') int pageSize,
     String? search,
     @JsonKey(name: 'search_precise') bool? searchPrecise,
     @JsonKey(name: 'search_exact') bool? searchExact,
@@ -31,4 +30,12 @@ class ListOfGamesRequest with _$ListOfGamesRequest {
 
   factory ListOfGamesRequest.fromJson(Map<String, dynamic> json) =>
       _$ListOfGamesRequestFromJson(json);
+}
+
+extension ListOfGamesRequestExtension on ListOfGamesRequest {
+  Map<String, dynamic> toNonNullFieldJson() {
+    Map<String, dynamic> json = toJson();
+    json.removeWhere((key, value) => value == null);
+    return json;
+  }
 }

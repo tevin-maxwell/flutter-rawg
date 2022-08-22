@@ -23,7 +23,6 @@ mixin _$ListOfGamesRequest {
   int get page => throw _privateConstructorUsedError;
   @JsonKey(name: 'page_size')
   int get pageSize => throw _privateConstructorUsedError;
-  String get key => throw _privateConstructorUsedError;
   String? get search => throw _privateConstructorUsedError;
   @JsonKey(name: 'search_precise')
   bool? get searchPrecise => throw _privateConstructorUsedError;
@@ -59,7 +58,6 @@ abstract class $ListOfGamesRequestCopyWith<$Res> {
   $Res call(
       {int page,
       @JsonKey(name: 'page_size') int pageSize,
-      String key,
       String? search,
       @JsonKey(name: 'search_precise') bool? searchPrecise,
       @JsonKey(name: 'search_exact') bool? searchExact,
@@ -87,7 +85,6 @@ class _$ListOfGamesRequestCopyWithImpl<$Res>
   $Res call({
     Object? page = freezed,
     Object? pageSize = freezed,
-    Object? key = freezed,
     Object? search = freezed,
     Object? searchPrecise = freezed,
     Object? searchExact = freezed,
@@ -110,10 +107,6 @@ class _$ListOfGamesRequestCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
       search: search == freezed
           ? _value.search
           : search // ignore: cast_nullable_to_non_nullable
@@ -176,7 +169,6 @@ abstract class _$$_ListOfGamesRequestCopyWith<$Res>
   $Res call(
       {int page,
       @JsonKey(name: 'page_size') int pageSize,
-      String key,
       String? search,
       @JsonKey(name: 'search_precise') bool? searchPrecise,
       @JsonKey(name: 'search_exact') bool? searchExact,
@@ -206,7 +198,6 @@ class __$$_ListOfGamesRequestCopyWithImpl<$Res>
   $Res call({
     Object? page = freezed,
     Object? pageSize = freezed,
-    Object? key = freezed,
     Object? search = freezed,
     Object? searchPrecise = freezed,
     Object? searchExact = freezed,
@@ -229,10 +220,6 @@ class __$$_ListOfGamesRequestCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int,
-      key: key == freezed
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
       search: search == freezed
           ? _value.search
           : search // ignore: cast_nullable_to_non_nullable
@@ -289,9 +276,8 @@ class __$$_ListOfGamesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ListOfGamesRequest implements _ListOfGamesRequest {
   _$_ListOfGamesRequest(
-      {required this.page,
-      @JsonKey(name: 'page_size') required this.pageSize,
-      required this.key,
+      {this.page = 1,
+      @JsonKey(name: 'page_size') this.pageSize = 10,
       this.search,
       @JsonKey(name: 'search_precise') this.searchPrecise,
       @JsonKey(name: 'search_exact') this.searchExact,
@@ -309,12 +295,11 @@ class _$_ListOfGamesRequest implements _ListOfGamesRequest {
       _$$_ListOfGamesRequestFromJson(json);
 
   @override
+  @JsonKey()
   final int page;
   @override
   @JsonKey(name: 'page_size')
   final int pageSize;
-  @override
-  final String key;
   @override
   final String? search;
   @override
@@ -350,7 +335,7 @@ class _$_ListOfGamesRequest implements _ListOfGamesRequest {
 
   @override
   String toString() {
-    return 'ListOfGamesRequest(page: $page, pageSize: $pageSize, key: $key, search: $search, searchPrecise: $searchPrecise, searchExact: $searchExact, parentPlatforms: $parentPlatforms, platforms: $platforms, stores: $stores, developers: $developers, publishers: $publishers, genres: $genres, tags: $tags, creators: $creators, orderBy: $orderBy)';
+    return 'ListOfGamesRequest(page: $page, pageSize: $pageSize, search: $search, searchPrecise: $searchPrecise, searchExact: $searchExact, parentPlatforms: $parentPlatforms, platforms: $platforms, stores: $stores, developers: $developers, publishers: $publishers, genres: $genres, tags: $tags, creators: $creators, orderBy: $orderBy)';
   }
 
   @override
@@ -360,7 +345,6 @@ class _$_ListOfGamesRequest implements _ListOfGamesRequest {
             other is _$_ListOfGamesRequest &&
             const DeepCollectionEquality().equals(other.page, page) &&
             const DeepCollectionEquality().equals(other.pageSize, pageSize) &&
-            const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other.search, search) &&
             const DeepCollectionEquality()
                 .equals(other.searchPrecise, searchPrecise) &&
@@ -386,7 +370,6 @@ class _$_ListOfGamesRequest implements _ListOfGamesRequest {
       runtimeType,
       const DeepCollectionEquality().hash(page),
       const DeepCollectionEquality().hash(pageSize),
-      const DeepCollectionEquality().hash(key),
       const DeepCollectionEquality().hash(search),
       const DeepCollectionEquality().hash(searchPrecise),
       const DeepCollectionEquality().hash(searchExact),
@@ -416,9 +399,8 @@ class _$_ListOfGamesRequest implements _ListOfGamesRequest {
 
 abstract class _ListOfGamesRequest implements ListOfGamesRequest {
   factory _ListOfGamesRequest(
-          {required final int page,
-          @JsonKey(name: 'page_size') required final int pageSize,
-          required final String key,
+          {final int page,
+          @JsonKey(name: 'page_size') final int pageSize,
           final String? search,
           @JsonKey(name: 'search_precise') final bool? searchPrecise,
           @JsonKey(name: 'search_exact') final bool? searchExact,
@@ -441,8 +423,6 @@ abstract class _ListOfGamesRequest implements ListOfGamesRequest {
   @override
   @JsonKey(name: 'page_size')
   int get pageSize;
-  @override
-  String get key;
   @override
   String? get search;
   @override

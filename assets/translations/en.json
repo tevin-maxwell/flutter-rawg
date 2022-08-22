@@ -1,0 +1,17 @@
+{
+  "key": "en",
+  "app_name": "Rawg IO",
+  "message": {},
+  "home_page": {
+    "header": "Home",
+    "not_logged_in_title": "Discover what interests you!",
+    "not_logged_in_message": "Personalize what you want to see by telling us what interests you with an account.",
+    "get_start_button": "Let's get started"
+  },
+  "profile_page": {
+    "header": "Profile",
+    "not_logged_in_title": "One of us!!!",
+    "not_logged_in_message": "Be apart of the community by logging in or sign up and stay up-to-date with your favorite games.",
+    "get_start_button": "Let's get started"
+  }
+}

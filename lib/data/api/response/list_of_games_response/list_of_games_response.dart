@@ -9,7 +9,9 @@ part 'list_of_games_response.g.dart';
 @freezed
 class ListOfGamesResponse with _$ListOfGamesResponse {
   factory ListOfGamesResponse(
-          {required ListingMetaData listingMetaData,
+          {required int count,
+          String? next,
+          String? previous,
           @Default([]) @JsonKey(name: 'results') List<Game> games}) =
       _ListOfGamesResponse;
 

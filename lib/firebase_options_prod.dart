@@ -65,7 +65,8 @@ class DefaultFirebaseOptions {
     projectId: 'zakuska-snack',
     databaseURL: 'https://zakuska-snack.firebaseio.com',
     storageBucket: 'zakuska-snack.appspot.com',
-    iosClientId: '998694748532-e5pmqkfdqgeh01fqua7sum9hgvg1ci0d.apps.googleusercontent.com',
+    iosClientId:
+        '998694748532-e5pmqkfdqgeh01fqua7sum9hgvg1ci0d.apps.googleusercontent.com',
     iosBundleId: 'kh.com.pada.rawg',
   );
 }

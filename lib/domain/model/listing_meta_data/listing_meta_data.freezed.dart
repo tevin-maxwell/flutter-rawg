@@ -20,8 +20,11 @@ ListingMetaData _$ListingMetaDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ListingMetaData {
+  @JsonKey(name: 'count')
   int get count => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next')
   String? get next => throw _privateConstructorUsedError;
+  @JsonKey(name: 'previous')
   String? get previous => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +38,10 @@ abstract class $ListingMetaDataCopyWith<$Res> {
   factory $ListingMetaDataCopyWith(
           ListingMetaData value, $Res Function(ListingMetaData) then) =
       _$ListingMetaDataCopyWithImpl<$Res>;
-  $Res call({int count, String? next, String? previous});
+  $Res call(
+      {@JsonKey(name: 'count') int count,
+      @JsonKey(name: 'next') String? next,
+      @JsonKey(name: 'previous') String? previous});
 }
 
 /// @nodoc
@@ -77,7 +83,10 @@ abstract class _$$_ListingMetaDataCopyWith<$Res>
           _$_ListingMetaData value, $Res Function(_$_ListingMetaData) then) =
       __$$_ListingMetaDataCopyWithImpl<$Res>;
   @override
-  $Res call({int count, String? next, String? previous});
+  $Res call(
+      {@JsonKey(name: 'count') int count,
+      @JsonKey(name: 'next') String? next,
+      @JsonKey(name: 'previous') String? previous});
 }
 
 /// @nodoc
@@ -117,16 +126,22 @@ class __$$_ListingMetaDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ListingMetaData implements _ListingMetaData {
-  _$_ListingMetaData({required this.count, this.next, this.previous});
+  _$_ListingMetaData(
+      {@JsonKey(name: 'count') required this.count,
+      @JsonKey(name: 'next') this.next,
+      @JsonKey(name: 'previous') this.previous});
 
   factory _$_ListingMetaData.fromJson(Map<String, dynamic> json) =>
       _$$_ListingMetaDataFromJson(json);
 
   @override
+  @JsonKey(name: 'count')
   final int count;
   @override
+  @JsonKey(name: 'next')
   final String? next;
   @override
+  @JsonKey(name: 'previous')
   final String? previous;
 
   @override
@@ -167,18 +182,21 @@ class _$_ListingMetaData implements _ListingMetaData {
 
 abstract class _ListingMetaData implements ListingMetaData {
   factory _ListingMetaData(
-      {required final int count,
-      final String? next,
-      final String? previous}) = _$_ListingMetaData;
+      {@JsonKey(name: 'count') required final int count,
+      @JsonKey(name: 'next') final String? next,
+      @JsonKey(name: 'previous') final String? previous}) = _$_ListingMetaData;
 
   factory _ListingMetaData.fromJson(Map<String, dynamic> json) =
       _$_ListingMetaData.fromJson;
 
   @override
+  @JsonKey(name: 'count')
   int get count;
   @override
+  @JsonKey(name: 'next')
   String? get next;
   @override
+  @JsonKey(name: 'previous')
   String? get previous;
   @override
   @JsonKey(ignore: true)
