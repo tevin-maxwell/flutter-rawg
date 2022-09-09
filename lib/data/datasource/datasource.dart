@@ -1,3 +1,6 @@
+export 'authentication/authentication_datasource_type.dart';
+export 'authentication/authentication_datasource.dart';
+
 export 'creator/creator_datasource_type.dart';
 export 'creator/creator_datasource.dart';
 

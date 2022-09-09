@@ -129,23 +129,28 @@ Widget notFound() {
 }
 
 Widget browseFailed(VoidCallback onPressed) {
-  return InkWell(
-    enableFeedback: false,
-    onTap: onPressed,
-    child: Column(
-      children: [
-        SvgPicture.asset('assets/images/undraw_not_found.svg',
-            clipBehavior: Clip.antiAlias,
-            fit: BoxFit.contain,
-            width: ScreenUtil().screenWidth * 0.65),
-        SizedBox(
-          height: AppMetric.largeSpacing,
-        ),
-        AppText.body1(
-          "Look like there's nothing here. Try again later!",
-          textAlign: TextAlign.center,
-        )
-      ],
+  return Align(
+    alignment: Alignment.center,
+    child: InkWell(
+      enableFeedback: false,
+      onTap: onPressed,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SvgPicture.asset('assets/images/undraw_not_found.svg',
+              clipBehavior: Clip.antiAlias,
+              fit: BoxFit.contain,
+              width: ScreenUtil().screenWidth * 0.65),
+          SizedBox(
+            height: AppMetric.largeSpacing,
+          ),
+          AppText.body1(
+            "Look like there's nothing here. Try again later!",
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     ),
   );
 }

@@ -1,4 +1,8 @@
 PODS:
+  - cloud_firestore (3.4.6):
+    - Firebase/Firestore (= 9.3.0)
+    - firebase_core
+    - Flutter
   - connectivity_plus (0.0.1):
     - Flutter
     - ReachabilitySwift
@@ -10,6 +14,9 @@ PODS:
   - Firebase/Database (9.3.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 9.3.0)
+  - Firebase/Firestore (9.3.0):
+    - Firebase/CoreOnly
+    - FirebaseFirestore (~> 9.3.0)
   - Firebase/RemoteConfig (9.3.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 9.3.0)
@@ -61,6 +68,11 @@ PODS:
   - FirebaseDatabase (9.3.0):
     - FirebaseCore (~> 9.0)
     - leveldb-library (~> 1.22)
+  - FirebaseFirestore (9.3.0):
+    - FirebaseFirestore/AutodetectLeveldb (= 9.3.0)
+  - FirebaseFirestore/AutodetectLeveldb (9.3.0):
+    - FirebaseFirestore/Base
+  - FirebaseFirestore/Base (9.3.0)
   - FirebaseInstallations (9.4.0):
     - FirebaseCore (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
@@ -118,21 +130,26 @@ PODS:
   - ReachabilitySwift (5.0.0)
   - shared_preferences_ios (0.0.1):
     - Flutter
+  - smart_auth (0.0.1):
+    - Flutter
   - SVProgressHUD (2.2.6):
     - SVProgressHUD/Core (= 2.2.6)
   - SVProgressHUD/Core (2.2.6)
 
 DEPENDENCIES:
+  - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
   - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
+  - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `9.3.0`)
   - Flutter (from `Flutter`)
   - flutter_sim_country_code (from `.symlinks/plugins/flutter_sim_country_code/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - smart_auth (from `.symlinks/plugins/smart_auth/ios`)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
 SPEC REPOS:
@@ -160,6 +177,8 @@ SPEC REPOS:
     - ReachabilitySwift
 
 EXTERNAL SOURCES:
+  cloud_firestore:
+    :path: ".symlinks/plugins/cloud_firestore/ios"
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/ios"
   firebase_auth:
@@ -172,6 +191,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_remote_config/ios"
   firebase_storage:
     :path: ".symlinks/plugins/firebase_storage/ios"
+  FirebaseFirestore:
+    :git: https://github.com/invertase/firestore-ios-sdk-frameworks.git
+    :tag: 9.3.0
   Flutter:
     :path: Flutter
   flutter_sim_country_code:
@@ -180,15 +202,21 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   shared_preferences_ios:
     :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  smart_auth:
+    :path: ".symlinks/plugins/smart_auth/ios"
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
+  FirebaseFirestore:
+    :git: https://github.com/invertase/firestore-ios-sdk-frameworks.git
+    :tag: 9.3.0
   SVProgressHUD:
     :commit: de1d4dba816a19454329031156b8788692bcfa2c
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
+  cloud_firestore: ef9c0c27fecf467c78c5dc31333d41cab1d86c0d
   connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
   Firebase: ef75abb1cdbc746d5a38f4e26c422c807b189b8c
   firebase_auth: e4bd9a01f6c45764bf3bfb0cea4d5ce3673a92a2
@@ -205,6 +233,7 @@ SPEC CHECKSUMS:
   FirebaseCoreExtension: 2cf8c542b54ad3c2d4b746c22e8828b670dcd9b0
   FirebaseCoreInternal: a13302b0088fbf5f38b79b6ece49c2af7d3e05d6
   FirebaseDatabase: 92350185966ddd283842aa9ca07e188691f3b8ad
+  FirebaseFirestore: c40525b1d07aa12d280f725a6527a7f35eb2e356
   FirebaseInstallations: 61db1054e688d2bdc4e2b3f744c1b086e913b742
   FirebaseRemoteConfig: 0a644c924b3339bcf3bc3ea253206f171672308e
   FirebaseStorage: 1414d27e15fa04f6350ef6602accef0e951c8bca
@@ -220,8 +249,9 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  smart_auth: 4bedbc118723912d0e45a07e8ab34039c19e04f2
   SVProgressHUD: de812b4f0e1d65358f0064416473174ae619843f
 
-PODFILE CHECKSUM: af04fec8be021cdc6dcd105a9abd63cc0e14be3c
+PODFILE CHECKSUM: a73b3298fbf1fbaeb362ee89f230db6e4175fe28
 
 COCOAPODS: 1.11.2

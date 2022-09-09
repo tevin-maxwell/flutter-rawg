@@ -32,6 +32,7 @@ target 'Runner' do
   use_modular_headers!
 
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '9.3.0'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end

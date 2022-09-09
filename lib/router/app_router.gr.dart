@@ -117,7 +117,7 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig(DashboardPage.name, path: '/', children: [
+        _i2.RouteConfig(DashboardPage.name, path: '/dashboard-page', children: [
           _i2.RouteConfig(BrowsePage.name,
               path: 'browse-page', parent: DashboardPage.name),
           _i2.RouteConfig(HomePage.name, path: '', parent: DashboardPage.name),
@@ -142,7 +142,7 @@ class AppRouter extends _i2.RootStackRouter {
             path: '/register-complete-page'),
         _i2.RouteConfig(RegisterGenrePreferencePage.name,
             path: '/register-genre-preference-page'),
-        _i2.RouteConfig(RegisterNamePage.name, path: '/register-name-page'),
+        _i2.RouteConfig(RegisterNamePage.name, path: '/'),
         _i2.RouteConfig(RegisterProfilePicturePage.name,
             path: '/register-profile-picture-page'),
         _i2.RouteConfig(RegisterTagPreferencePage.name,
@@ -159,7 +159,8 @@ class AppRouter extends _i2.RootStackRouter {
 /// [_i1.DashboardPage]
 class DashboardPage extends _i2.PageRouteInfo<void> {
   const DashboardPage({List<_i2.PageRouteInfo>? children})
-      : super(DashboardPage.name, path: '/', initialChildren: children);
+      : super(DashboardPage.name,
+            path: '/dashboard-page', initialChildren: children);
 
   static const String name = 'DashboardPage';
 }
@@ -280,8 +281,7 @@ class RegisterGenrePreferencePage extends _i2.PageRouteInfo<void> {
 /// generated route for
 /// [_i1.RegisterNamePage]
 class RegisterNamePage extends _i2.PageRouteInfo<void> {
-  const RegisterNamePage()
-      : super(RegisterNamePage.name, path: '/register-name-page');
+  const RegisterNamePage() : super(RegisterNamePage.name, path: '/');
 
   static const String name = 'RegisterNamePage';
 }

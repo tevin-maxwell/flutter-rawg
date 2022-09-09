@@ -6,7 +6,7 @@ import 'package:flutter_rawg/di/config_module.dart';
 import 'package:flutter_rawg/di/datasource_module.dart';
 import 'package:flutter_rawg/di/repository_module.dart';
 import 'package:flutter_rawg/di/usecase_module.dart';
-import 'package:flutter_rawg/domain/bloc/browse/browse_bloc.dart';
+import 'package:flutter_rawg/domain/bloc/bloc.dart';
 import 'package:flutter_rawg/utils/util.dart';
 import 'router/app_router.gr.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget
 
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+            create: (_) => AuthenticationBloc(useCase: authenticationUseCase)),
         BlocProvider(create: (_) => BrowseBloc(useCase: browseUseCase))
       ],
       child: MaterialApp.router(

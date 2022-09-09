@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_rawg/domain/model/profile/profile.dart';
 
 abstract class FirebaseClientType {
   /// Firebase Auth functions
@@ -15,6 +16,12 @@ abstract class FirebaseClientType {
     int? forceResendingToken,
   });
 
+  Future<PhoneAuthCredential> createCredential(
+      {required String verificationId, required String smsCode});
+
+  Future<UserCredential> signInWithCredential(
+      {required PhoneAuthCredential phoneAuthCredential});
+
   Future<void> signOut();
 
   User? getCurrentUser();
@@ -27,5 +34,10 @@ abstract class FirebaseClientType {
   /// Firebase Storage
   Future<String> uploadImage(String userId, File image);
 
-  /// Firebase Database
+  /// Firebase Cloud Firestore
+
+  Future<bool> checkIfDocumentExist(
+      {required String collectionName, required String documentId});
+
+  Future<Profile> getUser(UserCredential userCredential);
 }

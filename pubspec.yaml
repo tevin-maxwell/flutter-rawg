@@ -38,6 +38,9 @@ dependencies:
   lottie: ^1.4.1
   card_swiper: ^2.0.4
   transparent_image: ^2.0.0
+  pinput: ^2.2.12
+  cloud_firestore: ^3.4.6
+  rxdart: ^0.27.5
 
 dev_dependencies:
   flutter_test:

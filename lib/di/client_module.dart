@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_rawg/data/api/api_client/api_client.dart';
 import 'package:flutter_rawg/data/api/api_client/api_client_type.dart';
@@ -19,6 +20,8 @@ mixin ClientModule on ConfigModule {
   FirebaseClientType get firebaseClient {
     FirebaseStorage storageInstance =
         FirebaseStorage.instanceFor(bucket: appConfig.firebaseStorageBucket);
-    return FirebaseClient(firebaseStorage: storageInstance);
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    return FirebaseClient(
+        firebaseStorage: storageInstance, firebaseAuth: firebaseAuth);
   }
 }

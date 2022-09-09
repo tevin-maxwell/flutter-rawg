@@ -15,6 +15,8 @@ class AppColor {
   static const Color textOnSecondary = Color(0xFF000000);
 
   static const Color backgroundColor = Color(0xFFEFEFEF);
+  static const Color cardColor = Color(0xFFFFFFFF);
+  static const Color inputBackground = Color(0xFFfafafa);
 
   static const Color error = Color(0xFFF44336);
   static const Color success = Color(0xFF4CAF50);
@@ -31,8 +33,11 @@ class AppTheme {
         appBarTheme: AppBarTheme(
             backgroundColor: AppColor.primary,
             centerTitle: true,
-            titleTextStyle:
-                TextStyle(fontFamily: FontFamilyType.roboto.name(), fontWeight: FontWeightType.medium.type(), fontSize: 20.sp, letterSpacing: 0.15.sp)),
+            titleTextStyle: TextStyle(
+                fontFamily: FontFamilyType.roboto.name(),
+                fontWeight: FontWeightType.medium.type(),
+                fontSize: 20.sp,
+                letterSpacing: 0.15.sp)),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
             selectedLabelStyle: TextStyle(
                 fontFamily: FontFamilyType.roboto.name(),
@@ -79,10 +84,18 @@ class AppTheme {
                 borderRadius:
                     BorderRadius.all(Radius.circular(AppMetric.borderRadius)))),
         inputDecorationTheme: InputDecorationTheme(
-            focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: AppColor.primary)),
-            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColor.divider)),
-            disabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: AppColor.divider)),
-            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(AppMetric.borderRadius)))));
+            fillColor: AppColor.cardColor,
+            filled: true,
+            focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: AppColor.primary),
+                borderRadius:
+                    BorderRadius.all(Radius.circular(AppMetric.borderRadius))),
+            enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: AppColor.divider), borderRadius: BorderRadius.all(Radius.circular(AppMetric.borderRadius))),
+            disabledBorder: OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: AppColor.divider,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(AppMetric.borderRadius)))),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: AppColor.secondary));
   }
 }

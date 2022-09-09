@@ -9,6 +9,10 @@ class AppMetric {
   static double mediumSpacing = 12.sp;
   static double largeSpacing = 16.sp;
 
+  static double itemSpacing = 8.sp;
+  static double widgetSpacing = 16.sp;
+  static double sectionSpacing = 24.sp;
+
   static double minimumWidgetSize = 48.sp;
   static double defaultWidgetSize = 56.sp;
 

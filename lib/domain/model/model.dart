@@ -9,6 +9,7 @@ export 'genre/genre.dart';
 export 'listing_meta_data/listing_meta_data.dart';
 export 'platform/platform.dart';
 export 'position/position.dart';
+export 'profile/profile.dart';
 export 'rating/rating.dart';
 export 'screenshot/screenshot.dart';
 export 'store/store.dart';
