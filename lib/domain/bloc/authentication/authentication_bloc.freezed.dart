@@ -2011,7 +2011,7 @@ mixin _$AuthenticationEvent {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) =>
@@ -2024,7 +2024,7 @@ mixin _$AuthenticationEvent {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) =>
       throw _privateConstructorUsedError;
@@ -2036,7 +2036,7 @@ mixin _$AuthenticationEvent {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) =>
@@ -2163,7 +2163,7 @@ class _$_RequestOtp implements _RequestOtp {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
@@ -2179,7 +2179,7 @@ class _$_RequestOtp implements _RequestOtp {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
     return requestOtp?.call(phoneNumber);
@@ -2194,7 +2194,7 @@ class _$_RequestOtp implements _RequestOtp {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {
@@ -2355,7 +2355,7 @@ class _$_RequestOtpSucceed implements _RequestOtpSucceed {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
@@ -2371,7 +2371,7 @@ class _$_RequestOtpSucceed implements _RequestOtpSucceed {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
     return requestOtpSucceed?.call(phoneNumber, verificationId, resendToken);
@@ -2386,7 +2386,7 @@ class _$_RequestOtpSucceed implements _RequestOtpSucceed {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {
@@ -2526,7 +2526,7 @@ class _$_RequestOtpFailed implements _RequestOtpFailed {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
@@ -2542,7 +2542,7 @@ class _$_RequestOtpFailed implements _RequestOtpFailed {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
     return requestOtpFailed?.call(errorMessage);
@@ -2557,7 +2557,7 @@ class _$_RequestOtpFailed implements _RequestOtpFailed {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {
@@ -2703,7 +2703,7 @@ class _$_VerifyOtp implements _VerifyOtp {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
@@ -2719,7 +2719,7 @@ class _$_VerifyOtp implements _VerifyOtp {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
     return verifyOtp?.call(code, resendToken);
@@ -2734,7 +2734,7 @@ class _$_VerifyOtp implements _VerifyOtp {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {
@@ -2804,6 +2804,7 @@ abstract class _$$_UploadProfilePictureCopyWith<$Res> {
   factory _$$_UploadProfilePictureCopyWith(_$_UploadProfilePicture value,
           $Res Function(_$_UploadProfilePicture) then) =
       __$$_UploadProfilePictureCopyWithImpl<$Res>;
+  $Res call({XFile image});
 }
 
 /// @nodoc
@@ -2816,26 +2817,50 @@ class __$$_UploadProfilePictureCopyWithImpl<$Res>
 
   @override
   _$_UploadProfilePicture get _value => super._value as _$_UploadProfilePicture;
+
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_$_UploadProfilePicture(
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as XFile,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_UploadProfilePicture implements _UploadProfilePicture {
-  const _$_UploadProfilePicture();
+  const _$_UploadProfilePicture({required this.image});
+
+  @override
+  final XFile image;
 
   @override
   String toString() {
-    return 'AuthenticationEvent.uploadProfilePicture()';
+    return 'AuthenticationEvent.uploadProfilePicture(image: $image)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UploadProfilePicture);
+        (other.runtimeType == runtimeType &&
+            other is _$_UploadProfilePicture &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(image));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UploadProfilePictureCopyWith<_$_UploadProfilePicture> get copyWith =>
+      __$$_UploadProfilePictureCopyWithImpl<_$_UploadProfilePicture>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2846,11 +2871,11 @@ class _$_UploadProfilePicture implements _UploadProfilePicture {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
-    return uploadProfilePicture();
+    return uploadProfilePicture(image);
   }
 
   @override
@@ -2862,10 +2887,10 @@ class _$_UploadProfilePicture implements _UploadProfilePicture {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
-    return uploadProfilePicture?.call();
+    return uploadProfilePicture?.call(image);
   }
 
   @override
@@ -2877,12 +2902,12 @@ class _$_UploadProfilePicture implements _UploadProfilePicture {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {
     if (uploadProfilePicture != null) {
-      return uploadProfilePicture();
+      return uploadProfilePicture(image);
     }
     return orElse();
   }
@@ -2932,7 +2957,13 @@ class _$_UploadProfilePicture implements _UploadProfilePicture {
 }
 
 abstract class _UploadProfilePicture implements AuthenticationEvent {
-  const factory _UploadProfilePicture() = _$_UploadProfilePicture;
+  const factory _UploadProfilePicture({required final XFile image}) =
+      _$_UploadProfilePicture;
+
+  XFile get image;
+  @JsonKey(ignore: true)
+  _$$_UploadProfilePictureCopyWith<_$_UploadProfilePicture> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3017,7 +3048,7 @@ class _$_CreateAccount implements _CreateAccount {
         requestOtpSucceed,
     required TResult Function(String errorMessage) requestOtpFailed,
     required TResult Function(String code, int? resendToken) verifyOtp,
-    required TResult Function() uploadProfilePicture,
+    required TResult Function(XFile image) uploadProfilePicture,
     required TResult Function(String name, String? profilePicture)
         createAccount,
   }) {
@@ -3033,7 +3064,7 @@ class _$_CreateAccount implements _CreateAccount {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
   }) {
     return createAccount?.call(name, profilePicture);
@@ -3048,7 +3079,7 @@ class _$_CreateAccount implements _CreateAccount {
         requestOtpSucceed,
     TResult Function(String errorMessage)? requestOtpFailed,
     TResult Function(String code, int? resendToken)? verifyOtp,
-    TResult Function()? uploadProfilePicture,
+    TResult Function(XFile image)? uploadProfilePicture,
     TResult Function(String name, String? profilePicture)? createAccount,
     required TResult orElse(),
   }) {

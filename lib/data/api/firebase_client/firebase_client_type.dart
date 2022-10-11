@@ -39,5 +39,5 @@ abstract class FirebaseClientType {
   Future<bool> checkIfDocumentExist(
       {required String collectionName, required String documentId});
 
-  Future<Profile> getUser(UserCredential userCredential);
+  Future<Profile> getUser(String docId);
 }

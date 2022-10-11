@@ -16,8 +16,8 @@ class AuthenticationEvent with _$AuthenticationEvent {
   const factory AuthenticationEvent.verifyOtp(
       {required String code, int? resendToken}) = _VerifyOtp;
 
-  const factory AuthenticationEvent.uploadProfilePicture() =
-      _UploadProfilePicture;
+  const factory AuthenticationEvent.uploadProfilePicture(
+      {required XFile image}) = _UploadProfilePicture;
 
   const factory AuthenticationEvent.createAccount(
       {required String name, String? profilePicture}) = _CreateAccount;

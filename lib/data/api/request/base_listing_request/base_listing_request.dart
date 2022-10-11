@@ -11,7 +11,7 @@ class BaseListingRequest with _$BaseListingRequest {
     @Default(1) int page,
     @Default(10) @JsonKey(name: 'page_size') int pageSize,
     @Default('') String search,
-    @JsonKey(name: 'ordering') String? orderBy,
+    // @JsonKey(name: 'ordering') String? orderBy,
   }) = _BaseListingRequest;
 
   factory BaseListingRequest.fromJson(Map<String, dynamic> json) =>

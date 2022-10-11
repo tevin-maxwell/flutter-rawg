@@ -10,3 +10,4 @@ export 'widget/app_secondary_button.dart';
 export 'widget/app_floating_action_button.dart';
 export 'keyboard_hidden.dart';
 export 'widget/app_fade_in_image.dart';
+export 'widget/error_dialog_widget.dart';

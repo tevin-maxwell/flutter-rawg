@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_rawg/data/datasource/datasource.dart';
 import 'package:flutter_rawg/data/repository/authentication/authentication_repository_type.dart';
@@ -34,7 +36,13 @@ class AuthenticationRepository
   }
 
   @override
-  Future<Profile> getUser({required UserCredential userCredential}) async {
-    return dataSource.getUser(userCredential: userCredential);
+  Future<Profile> getUser({required String docId}) async {
+    return dataSource.getUser(docId: docId);
+  }
+
+  @override
+  Future<String> uploadProfilePicture(
+      {required String userId, required File image}) async {
+    return dataSource.uploadProfilePicture(userId: userId, image: image);
   }
 }

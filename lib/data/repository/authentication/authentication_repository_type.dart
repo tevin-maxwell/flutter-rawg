@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_rawg/domain/model/profile/profile.dart';
 
@@ -14,5 +16,8 @@ abstract class AuthenticationRepositoryType {
 
   Future<bool> isUserExist({required UserCredential userCredential});
 
-  Future<Profile> getUser({required UserCredential userCredential});
+  Future<Profile> getUser({required String docId});
+
+  Future<String> uploadProfilePicture(
+      {required String userId, required File image});
 }

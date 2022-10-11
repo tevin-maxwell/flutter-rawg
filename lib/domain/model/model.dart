@@ -18,3 +18,4 @@ export 'tag/tag.dart';
 export 'timeline/timeline.dart';
 export 'trailer/trailer.dart';
 export 'trailer_link/trailer_link.dart';
+export 'network_error/network_error.dart';

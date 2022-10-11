@@ -4,6 +4,7 @@ import 'package:flutter_rawg/domain/usecase/usecase.dart';
 import 'package:flutter_rawg/utils/util.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:image_picker/image_picker.dart';
 
 part 'authentication_state.dart';
 part 'authentication_event.dart';
@@ -16,6 +17,7 @@ class AuthenticationBloc
     on<_RequestOtp>(_onRequestOtp);
     on<_RequestOtpSucceed>(_onRequestOtpSucceed);
     on<_VerifyOtp>(_verifyingOtp);
+    on<_UploadProfilePicture>(_uploadProfilePicture);
   }
 
   final AuthenticationUseCaseType useCase;
@@ -81,7 +83,7 @@ class AuthenticationBloc
       print(userExist);
 
       if (userExist) {
-        await useCase.getProfile(userCredential: userCredential);
+        await useCase.getProfile();
       }
 
       emit(
@@ -92,5 +94,11 @@ class AuthenticationBloc
       print('error $e');
       LoadingModal.hide();
     }
+  }
+
+  void _uploadProfilePicture(
+      _UploadProfilePicture event, Emitter<AuthenticationState> emit) async {
+    // final userInfo = useCase.getProfile(userCredential: userCredential);
+    // await useCase.uploadProfilePicture();
   }
 }

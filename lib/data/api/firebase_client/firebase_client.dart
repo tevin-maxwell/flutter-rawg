@@ -85,7 +85,7 @@ class FirebaseClient extends FirebaseClientType {
   }
 
   @override
-  Future<Profile> getUser(UserCredential userCredential) async {
+  Future<Profile> getUser(String docId) async {
     final userCollectionRef = FirebaseFirestore.instance
         .collection('user')
         .withConverter<Profile>(
@@ -93,7 +93,7 @@ class FirebaseClient extends FirebaseClientType {
             toFirestore: (profile, _) => profile.toJson());
 
     return await userCollectionRef
-        .doc(userCredential.user?.phoneNumber)
+        .doc(docId)
         .get()
         .then((snapshot) => snapshot.data()!);
   }

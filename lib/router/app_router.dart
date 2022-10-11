@@ -5,18 +5,18 @@ import 'package:flutter_rawg/presentation/presentation.dart';
 
 @MaterialAutoRouter(replaceInRouteName: 'Page,Route', routes: <AutoRoute>[
   AutoRoute(
-    page: DashboardPage,
-    name: 'DashboardPage',
-    children: [
-      AutoRoute(page: BrowsePage, name: 'BrowsePage'),
-      AutoRoute(
-        page: HomePage,
-        name: 'HomePage',
-        initial: true,
-      ),
-      AutoRoute(page: ProfilePage, name: 'ProfilePage'),
-    ],
-  ),
+      page: DashboardPage,
+      name: 'DashboardPage',
+      children: [
+        AutoRoute(page: BrowsePage, name: 'BrowsePage'),
+        AutoRoute(
+          page: HomePage,
+          name: 'HomePage',
+          initial: true,
+        ),
+        AutoRoute(page: ProfilePage, name: 'ProfilePage'),
+      ],
+      initial: true),
   AutoRoute(page: BrowseGenreSelectionPage, name: 'BrowseGenreSelectionPage'),
   AutoRoute(page: BrowseResultPage, name: 'BrowseResultPage'),
   AutoRoute(page: BrowseTagSelectionPage, name: 'BrowseTagSelectionPage'),
@@ -32,7 +32,7 @@ import 'package:flutter_rawg/presentation/presentation.dart';
   AutoRoute(page: RegisterCompletePage, name: 'RegisterCompletePage'),
   AutoRoute(
       page: RegisterGenrePreferencePage, name: 'RegisterGenrePreferencePage'),
-  AutoRoute(page: RegisterNamePage, name: 'RegisterNamePage', initial: true),
+  AutoRoute(page: RegisterNamePage, name: 'RegisterNamePage'),
   AutoRoute(
       page: RegisterProfilePicturePage, name: 'RegisterProfilePicturePage'),
   AutoRoute(page: RegisterTagPreferencePage, name: 'RegisterTagPreferencePage'),

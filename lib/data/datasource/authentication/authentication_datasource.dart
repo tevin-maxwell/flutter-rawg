@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_rawg/data/api/firebase_client/firebase_client_type.dart';
 import 'package:flutter_rawg/data/datasource/authentication/authentication_datasource_type.dart';
@@ -33,7 +35,13 @@ class AuthenticationDataSource implements AuthenticationDataSourceType {
   }
 
   @override
-  Future<Profile> getUser({required UserCredential userCredential}) async {
-    return firebaseClient.getUser(userCredential);
+  Future<Profile> getUser({required String docId}) async {
+    return firebaseClient.getUser(docId);
+  }
+
+  @override
+  Future<String> uploadProfilePicture(
+      {required String userId, required File image}) async {
+    return firebaseClient.uploadImage(userId, image);
   }
 }

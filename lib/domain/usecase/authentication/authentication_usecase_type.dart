@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_rawg/data/api/request/request.dart';
 import 'package:flutter_rawg/domain/model/model.dart';
+import 'package:image_picker/image_picker.dart';
 
 abstract class AuthenticationUseCaseType {
   Future<void> requestOtp(
@@ -17,9 +18,10 @@ abstract class AuthenticationUseCaseType {
 
   Future<bool> checkExistingUser({required UserCredential userCredential});
 
-  Future<Profile> getProfile({required UserCredential userCredential});
+  Future<Profile> getProfile();
 
-  Future<String> uploadProfilePicture();
+  Future<String> uploadProfilePicture(
+      {required String userId, required XFile image});
 
   Future<Profile> registerAccount({required RegisterRequest registerRequest});
 }

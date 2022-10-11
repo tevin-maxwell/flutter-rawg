@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter_rawg/data/repository/repository.dart';
 import 'package:flutter_rawg/domain/model/profile/profile.dart';
 import 'package:flutter_rawg/data/api/request/register_request/register_request.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_rawg/domain/usecase/authentication/authentication_usecase_type.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AuthenticationUseCase implements AuthenticationUseCaseType {
   AuthenticationUseCase({required this.authenticationRepository});
@@ -39,14 +42,16 @@ class AuthenticationUseCase implements AuthenticationUseCaseType {
   }
 
   @override
-  Future<Profile> getProfile({required UserCredential userCredential}) async {
-    return await authenticationRepository.getUser(
-        userCredential: userCredential);
+  Future<Profile> getProfile() async {
+    return await authenticationRepository.getUser(docId: '');
   }
 
   @override
-  Future<String> uploadProfilePicture() {
-    throw UnimplementedError();
+  Future<String> uploadProfilePicture(
+      {required String userId, required XFile image}) async {
+    File file = File(image.path);
+    return await authenticationRepository.uploadProfilePicture(
+        userId: userId, image: file);
   }
 
   @override

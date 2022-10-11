@@ -44,6 +44,10 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need your photo permission to upload your profile picture.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need your camera permission to take and upload your profile picture.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>

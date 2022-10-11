@@ -12,7 +12,6 @@ _$_BaseListingRequest _$$_BaseListingRequestFromJson(
       page: json['page'] as int? ?? 1,
       pageSize: json['page_size'] as int? ?? 10,
       search: json['search'] as String? ?? '',
-      orderBy: json['ordering'] as String?,
     );
 
 Map<String, dynamic> _$$_BaseListingRequestToJson(
@@ -21,5 +20,4 @@ Map<String, dynamic> _$$_BaseListingRequestToJson(
       'page': instance.page,
       'page_size': instance.pageSize,
       'search': instance.search,
-      'ordering': instance.orderBy,
     };
